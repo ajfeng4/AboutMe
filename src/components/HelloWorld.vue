@@ -23,6 +23,12 @@
       </v-col>
     </v-row>
 
+    <v-row>
+      <v-col cols="12">
+        <v-spacer class="my-12"></v-spacer>
+      </v-col>
+    </v-row>
+
     <CodingSkills />
   </v-container>
 </template>
@@ -39,4 +45,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.my-12 {
+  height: 350px;
+}
+</style>
+
 
