@@ -18,7 +18,12 @@
             class="skill-card pa-4 d-flex flex-column align-center"
             width="100%"
         >
-          <v-icon :size="80" class="mb-2">{{ skill.icon }}</v-icon>
+          <template v-if="isMdiIcon(skill.icon)">
+            <v-icon :size="80" class="mb-2">{{ skill.icon }}</v-icon>
+          </template>
+          <template v-else>
+            <i :class="[skill.icon, 'boxicon-size']"></i>
+          </template>
           <span class="font-weight-medium">{{ skill.name }}</span>
         </v-card>
       </v-col>
@@ -36,14 +41,19 @@ export default {
         { name: 'JavaScript', icon: 'mdi-language-javascript' },
         { name: 'React.js', icon: 'mdi-react' },
         { name: 'React Native', icon: 'mdi-react' },
-        { name: 'CSS', icon: 'mdi-language-css3' },
-        { name: 'HTML', icon: 'mdi-language-html5' },
+        { name: 'CSS', icon: 'bx bxl-css3' },
+        { name: 'HTML', icon: 'bx bxl-html5' },
         { name: 'Vue.js', icon: 'mdi-vuejs' },
         { name: 'React', icon: 'mdi-react' },
         { name: 'TypeScript', icon: 'mdi-language-typescript' },
         { name: 'Git', icon: 'mdi-git' },
       ],
     };
+  },
+  methods: {
+    isMdiIcon(icon) {
+      return icon.startsWith('mdi-');
+    },
   },
 };
 </script>
@@ -66,8 +76,14 @@ export default {
 }
 
 .v-icon,
-.font-weight-medium {
+.font-weight-medium,
+.boxicon-size {
   color: inherit;
+}
+
+.boxicon-size {
+  font-size: 80px;
+  margin-bottom: 16px;
 }
 
 .v-row {
