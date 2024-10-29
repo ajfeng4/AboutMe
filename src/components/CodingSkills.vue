@@ -19,10 +19,10 @@
             width="100%"
         >
           <template v-if="isMdiIcon(skill.icon)">
-            <v-icon :size="80" class="mb-2">{{ skill.icon }}</v-icon>
+            <v-icon :size="80" class="mb-2" :style="{ color: skill.color }">{{ skill.icon }}</v-icon>
           </template>
           <template v-else>
-            <i :class="[skill.icon, 'boxicon-size']"></i>
+            <i :class="[skill.icon, 'boxicon-size']" :style="{ color: skill.color }"></i>
           </template>
           <span class="font-weight-medium">{{ skill.name }}</span>
         </v-card>
@@ -37,16 +37,14 @@ export default {
   data() {
     return {
       skills: [
-        { name: 'TypeScript', icon: 'mdi-language-typescript' },
-        { name: 'JavaScript', icon: 'mdi-language-javascript' },
-        { name: 'React.js', icon: 'mdi-react' },
-        { name: 'React Native', icon: 'mdi-react' },
-        { name: 'CSS', icon: 'bx bxl-css3' },
-        { name: 'HTML', icon: 'bx bxl-html5' },
-        { name: 'Vue.js', icon: 'mdi-vuejs' },
-        { name: 'React', icon: 'mdi-react' },
-        { name: 'TypeScript', icon: 'mdi-language-typescript' },
-        { name: 'Git', icon: 'mdi-git' },
+        { name: 'TypeScript', icon: 'mdi-language-typescript', color: '#007acc' },
+        { name: 'JavaScript', icon: 'mdi-language-javascript', color: '#f0db4f' },
+        { name: 'React.js', icon: 'mdi-react', color: '#f0db4f' },
+        { name: 'React Native', icon: 'mdi-react', color: '#61dafb' },
+        { name: 'CSS', icon: 'bx bxl-css3', color: '#264de4' },
+        { name: 'HTML', icon: 'bx bxl-html5', color: '#e34c26' },
+        { name: 'Vue.js', icon: 'mdi-vuejs', color: '#42b883' },
+        { name: 'Git', icon: 'mdi-git', color: '#f34f29' }
       ],
     };
   },
@@ -103,3 +101,4 @@ export default {
   }
 }
 </style>
+
