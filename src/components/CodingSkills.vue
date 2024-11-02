@@ -8,8 +8,8 @@
           v-for="(skill, index) in skills"
           :key="index"
           cols="2"
-          sm="4"
-          md="3"
+          sm="3"
+          md="2"
           class="d-flex justify-center"
       >
         <v-card
@@ -19,7 +19,9 @@
             width="100%"
         >
           <template v-if="isMdiIcon(skill.icon)">
-            <v-icon :size="80" class="mb-2" :style="{ color: skill.color }">{{ skill.icon }}</v-icon>
+            <v-icon :size="80" class="mb-2" :style="{ color: skill.color }">
+              {{ skill.icon }}
+            </v-icon>
           </template>
           <template v-else>
             <i :class="[skill.icon, 'boxicon-size']" :style="{ color: skill.color }"></i>
@@ -59,7 +61,6 @@ export default {
 <style scoped>
 .skill-card {
   transition: transform 0.3s, background-color 0.3s;
-  border: 1px solid #333;
   min-height: 250px;
   display: flex;
   flex-direction: column;
@@ -96,8 +97,8 @@ export default {
 
 @media (min-width: 1600px) {
   .v-col {
-    flex: 0 0 20%;
-    max-width: 20%;
+    flex: 0 0 16.6667%;
+    max-width: 16.6667%;
   }
 }
 </style>
