@@ -12,27 +12,23 @@
               </v-col>
               <v-col cols="11">
                 <v-row>
-                  <v-col cols="8">
-                    <h3 class="font-weight-bold d-flex align-center">
+                  <v-col cols="8" class="d-flex align-center">
+                    <h3 class="font-weight-bold">
                       {{ experience.title }}
-                      <v-chip
-                          v-if="experience.type"
-                          class="ml-3"
-                          color="blue lighten-4"
-                          text-color="blue darken-2"
-                          small
-                      >
-                        {{ experience.type }}
-                      </v-chip>
                     </h3>
-                  </v-col>
-                  <v-col cols="4" class="text-right">
-                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-calendar</v-icon>
-                    <span>{{ experience.date }}</span>
+                    <v-chip
+                        v-if="experience.type"
+                        class="ml-3"
+                        color="blue lighten-4"
+                        text-color="blue darken-2"
+                        small
+                    >
+                      {{ experience.type }}
+                    </v-chip>
                   </v-col>
                 </v-row>
 
-                <v-row align="center">
+                <v-row align="center" class="mt-2">
                   <v-col cols="4" class="d-flex align-center">
                     <v-icon color="grey darken-1" size="20" class="mr-2">mdi-office-building</v-icon>
                     <span>{{ experience.company }}</span>
@@ -40,6 +36,10 @@
                   <v-col cols="4" class="d-flex align-center">
                     <v-icon color="grey darken-1" size="20" class="mr-2">mdi-map-marker</v-icon>
                     <span>{{ experience.location }}</span>
+                  </v-col>
+                  <v-col cols="4" class="d-flex align-center justify-end">
+                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-calendar</v-icon>
+                    <span>{{ experience.date }}</span>
                   </v-col>
                 </v-row>
 
