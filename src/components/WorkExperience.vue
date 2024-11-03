@@ -5,7 +5,13 @@
         <v-card flat>
           <h1 class="display-2 font-weight-bold mb-5">My Experience</h1>
 
-          <v-card v-for="(experience, index) in experiences" :key="index" class="mb-5 py-4 px-6" flat outlined>
+          <v-card
+              v-for="(experience, index) in experiences"
+              :key="index"
+              outlined
+              elevation="2"
+              class="experience-card mb-5 py-4 px-6"
+          >
             <v-row>
               <v-col cols="1" class="d-flex align-center justify-center">
                 <v-icon :color="experience.iconColor" size="40">{{ experience.icon }}</v-icon>
@@ -102,15 +108,20 @@ export default {
 .font-weight-bold {
   font-weight: 700;
 }
-.mb-5 {
-  margin-bottom: 40px !important;
+.experience-card {
+  transition: transform 0.3s, background-color 0.3s;
+  background-color: #f9f9f9;
 }
-.py-4 {
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
+
+.experience-card:hover {
+  transform: scale(1.05);
+  background-color: #333;
+  color: #fff;
 }
-.px-6 {
-  padding-left: 24px !important;
-  padding-right: 24px !important;
+
+.v-icon,
+.font-weight-medium,
+.text--secondary {
+  color: inherit;
 }
 </style>
