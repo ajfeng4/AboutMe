@@ -30,18 +30,26 @@
     </v-row>
 
     <CodingSkills />
+
+    <v-row>
+      <v-col cols="12" class="my-12">
+        <WorkExperience />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
+import WorkExperience from '../components/WorkExperience.vue';
 
 export default {
   name: 'HelloWorld',
   components: {
     SocialMedia,
     CodingSkills,
+    WorkExperience,
   },
 };
 </script>
@@ -51,5 +59,6 @@ export default {
   height: 350px;
 }
 </style>
+
 
 
