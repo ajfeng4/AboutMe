@@ -25,31 +25,50 @@
 
     <v-row>
       <v-col cols="12">
-        <v-spacer class="my-12"></v-spacer>
+        <v-spacer class="custom-spacer"></v-spacer>
       </v-col>
     </v-row>
 
     <CodingSkills />
+
+    <v-row class="my-12">
+      <v-col cols="12">
+        <WorkExperience />
+      </v-col>
+    </v-row>
+
+    <v-row class="my-12">
+      <v-col cols="12">
+        <Education />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
+import WorkExperience from '../components/WorkExperience.vue';
+import Education from '../components/Education.vue';
 
 export default {
   name: 'HelloWorld',
   components: {
     SocialMedia,
     CodingSkills,
+    WorkExperience,
+    Education,
   },
 };
 </script>
 
 <style scoped>
-.my-12 {
+.custom-spacer {
   height: 350px;
 }
+
+.v-row.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 </style>
-
-
