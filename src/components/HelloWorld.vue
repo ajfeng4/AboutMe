@@ -42,6 +42,12 @@
         <Education />
       </v-col>
     </v-row>
+
+    <v-row class="my-12">
+      <v-col cols="12">
+        <Projects />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -50,14 +56,16 @@ import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
+import Projects from '../components/Projects.vue';
 
 export default {
-  name: 'HelloWorld',
+  name: 'MainPage',
   components: {
     SocialMedia,
     CodingSkills,
     WorkExperience,
     Education,
+    Projects,
   },
 };
 </script>
