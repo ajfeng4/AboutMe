@@ -8,7 +8,7 @@
         </v-row>
 
         <v-row class="align-center">
-          <v-btn text v-for="item in navItems" :key="item.text" :href="item.link">
+          <v-btn text v-for="item in navItems" :key="item.text" @click="scrollToSection(item.link)">
             {{ item.text }}
           </v-btn>
         </v-row>
@@ -27,14 +27,22 @@ export default {
   data() {
     return {
       navItems: [
-        { text: 'About Me', link: '#about' },
-        { text: 'Skills', link: '#skills' },
-        { text: 'Education', link: '#about' },
-        { text: 'Experience', link: '#about' },
-        { text: 'Projects', link: '#project' },
-        { text: 'Contact Me', link: '#contact' },
+        { text: 'About Me', link: 'about' },
+        { text: 'Skills', link: 'skills' },
+        { text: 'Education', link: 'education' },
+        { text: 'Experience', link: 'experience' },
+        { text: 'Projects', link: 'projects' },
+        { text: 'Contact Me', link: 'contact' },
       ],
     };
+  },
+  methods: {
+    scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
   },
 };
 </script>

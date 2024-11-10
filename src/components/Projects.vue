@@ -1,4 +1,6 @@
 <script setup>
+import { Icon } from '@iconify/vue';
+
 const projects = [
   {
     year: "Fall 2024",
@@ -8,50 +10,97 @@ const projects = [
     githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
-      { icon: "mdi-react", name: "React Native", color: "#61dafb" },
       { icon: "mdi-language-typescript", name: "TypeScript", color: "#007acc" },
-      { icon: "mdi-database", name: "Database", color: "#e76e55" },
+      { icon: "simple-icons:python", name: "Python", color: "#3776AB" },
+      { icon: "mdi-react", name: "React Native", color: "#61dafb" },
+      { icon: "simple-icons:supabase", name: "Supabase", color: "#3ECF8E" },
+      { icon: "simple-icons:postgresql", name: "Postgresql", color: "#4169E1" },
+      { icon: "simple-icons:expo", name: "Expo Go", color: "#000020" },
+      { icon: "simple-icons:reactrouter", name: "React Router", color: "#CA4245" },
+
     ],
   },
   {
     year: "Fall 2024",
-    title: "Drink Intake App",
+    title: "Find a Mechanic",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
     githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
-      { icon: "mdi-react", name: "React.js", color: "#f0db4f" },
-      { icon: "mdi-language-javascript", name: "JavaScript", color: "#f0db4f" },
-      { icon: "mdi-database", name: "Database", color: "#e76e55" },
+      { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
+      { icon: "simple-icons:php", name: "PHP", color: "#777BB4" },
+      { icon: "simple-icons:mysql", name: "MySQL", color: "#4479A1" },
+      { icon: "mdi-react", name: "React Native", color: "#61dafb" },
+      { icon: "simple-icons:expo", name: "Expo Go", color: "#000020" },
+
     ],
   },
   {
     year: "Fall 2024",
-    title: "Drink Intake App",
+    title: "Hungie Mobile App",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
     githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
-      { icon: "mdi-react", name: "React.js", color: "#f0db4f" },
-      { icon: "mdi-language-javascript", name: "JavaScript", color: "#f0db4f" },
-      { icon: "mdi-database", name: "Database", color: "#e76e55" },
+      { icon: "mdi-language-typescript", name: "TypeScript", color: "#007acc" },
+      { icon: "simple-icons:python", name: "Python", color: "#3776AB" },
+      { icon: "mdi-react", name: "React Native", color: "#61dafb" },
+      { icon: "simple-icons:tailwindcss", name: "Tailwind CSS", color: "#06B6D4" },
+      { icon: "simple-icons:nodedotjs", name: "Node.js", color: "#5FA04E" },
+      { icon: "simple-icons:flask", name: "Flask", color: "#000000" },
+      { icon: "simple-icons:firebase", name: "Firebase", color: "#DD2C00" },
+      { icon: "simple-icons:expo", name: "Expo Go", color: "#000020" },
+
     ],
   },
   {
     year: "Fall 2024",
-    title: "Drink Intake App",
+    title: "Dystopia",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
     githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
-      { icon: "mdi-react", name: "React.js", color: "#f0db4f" },
-      { icon: "mdi-javascript", name: "JavaScript", color: "#f0db4f" },
-      { icon: "mdi-database", name: "Database", color: "#e76e55" },
+      { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
+      { icon: "simple-icons:css3", name: "CSS", color: "#1572B6" },
+      { icon: "simple-icons:bootstrap", name: "Bootstrap", color: "#7952B3" },
+      { icon: "simple-icons:swagger", name: "Swagger", color: "#85EA2D" },
     ],
   },
+  {
+    year: "Fall 2024",
+    title: "Inventory Manager",
+    description: "Project to keep track of user intake",
+    icon: "mdi-code-tags",
+    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    tags: [
+      { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
+      { icon: "simple-icons:css3", name: "CSS", color: "#1572B6" },
+      { icon: "simple-icons:mui", name: "MaterialUI", color: "#007FFF" },
+      { icon: "simple-icons:nextdotjs", name: "Next.js", color: "#000000" },
+      { icon: "simple-icons:vercel", name: "Vercel", color: "#000000" },
+    ],
+  },
+  {
+    year: "Fall 2024",
+    title: "Brighterspace",
+    description: "Project to keep track of user intake",
+    icon: "mdi-code-tags",
+    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    tags: [
+      { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
+      { icon: "simple-icons:css3", name: "CSS", color: "#1572B6" },
+      { icon: "simple-icons:html5", name: "HTML", color: "#E34F26" },
+      { icon: "simple-icons:php", name: "PHP", color: "#777BB4" },
+      { icon: "simple-icons:mysql", name: "MySQL", color: "#4479A1" },
+      { icon: "simple-icons:apache", name: "Apache", color: "#D22128" },
+    ],
+  },
+
 ];
 </script>
 
@@ -84,7 +133,7 @@ const projects = [
                     class="tag-container"
                     :style="{ backgroundColor: tag.color }"
                 >
-                  <v-icon size="30" class="mr-2" color="white">{{ tag.icon }}</v-icon>
+                  <Icon :icon="tag.icon" width="30" height="30" class="mr-2" color="white" />
                   <span class="tag-text" style="color: white;">{{ tag.name }}</span>
                 </div>
               </div>
@@ -125,3 +174,4 @@ const projects = [
   font-weight: 500;
 }
 </style>
+
