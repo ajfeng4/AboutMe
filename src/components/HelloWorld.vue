@@ -6,12 +6,10 @@
           <h1 class="display-2 font-weight-bold mb-3">Hello, I'm Alex Feng</h1>
           <h2 class="headline font-weight-bold">Software Engineer</h2>
           <h3 class="subheading font-weight-bold mb-3">Brooklyn, New York</h3>
-
           <p class="body-1 mb-4">
             A full-time student taking a full course load and working 40 hours a week. Passionate about front-end and mobile development,
             with experience in technical and non-technical environments. An experienced team player and seasoned leader.
           </p>
-
           <SocialMedia />
         </v-card>
       </v-col>
@@ -30,30 +28,27 @@
     </v-row>
 
     <CodingSkills />
-
     <v-row class="my-12">
       <v-col cols="12">
         <WorkExperience />
       </v-col>
     </v-row>
-
     <v-row class="my-12">
       <v-col cols="12">
         <Education />
       </v-col>
     </v-row>
-
     <v-row class="my-12">
       <v-col cols="12">
         <Projects />
       </v-col>
     </v-row>
-
     <v-row class="my-12">
       <v-col cols="12">
         <GitHubStats />
       </v-col>
     </v-row>
+    <ContactMe />
   </v-container>
 </template>
 
@@ -64,6 +59,7 @@ import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
 import Projects from '../components/Projects.vue';
 import GitHubStats from '../components/GitHubStats.vue';
+import ContactMe from '../components/ContactMe.vue';
 
 export default {
   name: 'MainPage',
@@ -74,6 +70,7 @@ export default {
     Education,
     Projects,
     GitHubStats,
+    ContactMe,
   },
 };
 </script>
