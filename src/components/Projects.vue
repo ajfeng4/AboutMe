@@ -5,6 +5,8 @@ const projects = [
     title: "Drink Intake App",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
+    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
       { icon: "mdi-vuejs", name: "Vue.js" },
       { icon: "mdi-javascript", name: "JavaScript" },
@@ -16,6 +18,8 @@ const projects = [
     title: "Drink Intake App",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
+    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
       { icon: "mdi-vuejs", name: "Vue.js" },
       { icon: "mdi-javascript", name: "JavaScript" },
@@ -27,6 +31,8 @@ const projects = [
     title: "Drink Intake App",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
+    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
       { icon: "mdi-vuejs", name: "Vue.js" },
       { icon: "mdi-javascript", name: "JavaScript" },
@@ -38,6 +44,8 @@ const projects = [
     title: "Drink Intake App",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
+    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
     tags: [
       { icon: "mdi-vuejs", name: "Vue.js" },
       { icon: "mdi-javascript", name: "JavaScript" },
@@ -58,7 +66,15 @@ const projects = [
               <v-icon size="80" color="primary">{{ project.icon }}</v-icon>
             </v-col>
             <v-col cols="10">
-              <h2 class="headline font-weight-bold">{{ project.title }}</h2>
+              <div class="project-header">
+                <h2 class="headline font-weight-bold">{{ project.title }}</h2>
+                <v-btn icon :href="project.githubLink" target="_blank">
+                  <v-icon>mdi-github</v-icon>
+                </v-btn>
+                <v-btn icon :href="project.websiteLink" target="_blank">
+                  <v-icon>mdi-web</v-icon>
+                </v-btn>
+              </div>
               <p class="subtitle-1 text--primary font-weight-light">{{ project.year }}</p>
               <p class="body-2 mb-4">{{ project.description }}</p>
               <div class="tags">
@@ -82,6 +98,13 @@ const projects = [
 <style scoped>
 .display-1 {
   margin-bottom: 2rem;
+}
+.project-header {
+  display: flex;
+  align-items: center;
+}
+.project-header h2 {
+  margin-right: 16px;
 }
 .tags {
   display: flex;
