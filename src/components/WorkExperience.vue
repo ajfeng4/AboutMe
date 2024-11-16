@@ -13,10 +13,10 @@
               class="experience-card mb-5 py-4 px-6"
           >
             <v-row>
-              <v-col cols="1" class="d-flex align-center justify-center">
-                <v-icon :color="experience.iconColor" size="40">{{ experience.icon }}</v-icon>
+              <v-col cols="2" class="d-flex align-center justify-center">
+                <v-img :src="experience.image" width="80" height="80" contain></v-img>
               </v-col>
-              <v-col cols="11">
+              <v-col cols="10">
                 <v-row>
                   <v-col cols="8" class="d-flex align-center">
                     <h3 class="font-weight-bold">
@@ -74,6 +74,14 @@
 </template>
 
 <script>
+import Dental from '@/assets/dental.png';
+import Research from '@/assets/logo.png';
+import Teaching from '@/assets/logo.png';
+import Internship1 from '@/assets/logo.png';
+import Hungie from '@/assets/logo.png';
+import SA from '@/assets/logo.png';
+import cybersecurity from '@/assets/logo.png';
+
 export default {
   name: 'WorkExperience',
   data() {
@@ -89,9 +97,8 @@ export default {
             'Identified and fixed inconsistencies and bugs on the SDM website; recommended and implemented enhancements to improve user experience.',
             'Collaborated closely with SDM admissions, conducting regular meetings and interviews with students to gather critical feedback for website improvements.',
           ],
-          icon: 'mdi-briefcase',
-          iconColor: 'blue',
           type: 'Part-Time',
+          image: Dental,
         },
         {
           title: 'Undergraduate Research Assistant',
@@ -101,14 +108,13 @@ export default {
           description: [
             'Developed a React Native mobile application for Professor Wenyao Xu Drink Intake Project to monitor users drinking habits based on detected drinking sounds.',
             'Composed research proposals and delivered weekly reports during stand-up meetings with Professor Xu.',
-              'Utilized React Native Framework, React Native Paper, TypeScript, and Tailwind CSS for front-end development.',
-              'Implemented Python and Flask for the back end, integrating AWS for database management.',
-              'Designed and presented UI/UX prototypes using Figma to professors, Ph.D. researchers, and potential users.',
-              'Integrated Software Development Life Cycle (SDLC) processes and managed tasks using Kanban boards like Trello and Jira.'
+            'Utilized React Native Framework, React Native Paper, TypeScript, and Tailwind CSS for front-end development.',
+            'Implemented Python and Flask for the back end, integrating AWS for database management.',
+            'Designed and presented UI/UX prototypes using Figma to professors, Ph.D. researchers, and potential users.',
+            'Integrated Software Development Life Cycle (SDLC) processes and managed tasks using Kanban boards like Trello and Jira.'
           ],
-          icon: 'mdi-briefcase',
-          iconColor: 'green',
           type: 'Part-Time',
+          image: Research,
         },
         {
           title: 'Undergraduate Teaching Assistant',
@@ -118,14 +124,13 @@ export default {
           description: [
             'Assisted the professor in teaching CSE410: 3D Game Development using C++ and Unreal Engine to over 100 students.',
             'Held weekly office hours to provide guidance and support to students.',
-              'Led and mentored groups of students in developing games, fostering collaboration and technical skills.',
-              'Graded weekly assignments and provided constructive feedback.',
-              'Responded to student inquiries and facilitated discussions through Piazza.',
-              '-Supported students in learning and applying C++ and Unreal Engine for game development projects',
+            'Led and mentored groups of students in developing games, fostering collaboration and technical skills.',
+            'Graded weekly assignments and provided constructive feedback.',
+            'Responded to student inquiries and facilitated discussions through Piazza.',
+            'Supported students in learning and applying C++ and Unreal Engine for game development projects',
           ],
-          icon: 'mdi-briefcase',
-          iconColor: 'orange',
           type: 'Internship',
+          image: Teaching,
         },
         {
           title: 'Software Engineer Intern',
@@ -135,13 +140,12 @@ export default {
           description: [
             'Migrated legacy systems to Java and Spring Boot, increasing efficiency by 35% and reducing maintenance costs.',
             'Updated the front end of legacy software using JavaScript and Tailwind CSS, reducing technical debt.',
-              'Utilized Azure SQL to build and connect user databases.',
-              'Collaborated with cross-functional teams using Git to ensure successful integration and maintain clean code.',
-              'Participated in weekly stand-up meetings and full software development cycles, adhering to Agile methodologies.'
+            'Utilized Azure SQL to build and connect user databases.',
+            'Collaborated with cross-functional teams using Git to ensure successful integration and maintain clean code.',
+            'Participated in weekly stand-up meetings and full software development cycles, adhering to Agile methodologies.'
           ],
-          icon: 'mdi-briefcase',
-          iconColor: 'orange',
           type: 'Internship',
+          image: Internship1,
         },
         {
           title: 'Software Engineer Intern',
@@ -151,13 +155,12 @@ export default {
           description: [
             'Developed a mobile iOS/Android app powered by AI to recommend and cater food based on users taste preferences.',
             'Implemented scalable full-stack features using TypeScript, React Native, Python, and Firebase.',
-              'Reduced technical debt by 50% through the use of Tailwind CSS and API optimizations, improving load times by 20%.',
-              'Integrated alternative APIs and services such as SendGrid, Twilio, and Swagger, reducing costs significantly and overhauled deprecated systems.',
-              'Collaborated with cross-functional teams using tools like Notion, Trello, Jira, and Figma for work-flow management and front-end development.'
+            'Reduced technical debt by 50% through the use of Tailwind CSS and API optimizations, improving load times by 20%.',
+            'Integrated alternative APIs and services such as SendGrid, Twilio, and Swagger, reducing costs significantly and overhauled deprecated systems.',
+            'Collaborated with cross-functional teams using tools like Notion, Trello, Jira, and Figma for work-flow management and front-end development.'
           ],
-          icon: 'mdi-briefcase',
-          iconColor: 'orange',
           type: 'Internship',
+          image: Hungie,
         },
         {
           title: 'Director of Procurement',
@@ -165,13 +168,12 @@ export default {
           location: 'Buffalo, New York',
           date: 'May 2024 - Aug 2024',
           description: [
-            'Negotiated competitive rates with vendors, saving student clubs signifacent annually.',
-            'Managed large amount of weekly purchase orders, maintaining transparency and accuracy. ',
-              'Led a team of 5 Procurement Assistants, refine procurement process to better serve undergraduate clubs'
+            'Negotiated competitive rates with vendors, saving student clubs significantly annually.',
+            'Managed a large number of weekly purchase orders, maintaining transparency and accuracy.',
+            'Led a team of 5 Procurement Assistants, refining procurement processes to better serve undergraduate clubs.'
           ],
-          icon: 'mdi-briefcase',
-          iconColor: 'orange',
           type: 'Internship',
+          image: SA,
         },
         {
           title: 'Cybersecurity Analyst',
@@ -179,13 +181,12 @@ export default {
           location: 'Weston, Connecticut',
           date: 'March 2024 - May 2024',
           description: [
-            'Researched NIST compliance and conducted weekly presentations/seminars about NIST compliance and best security practices. ',
-            'Ran demoing invovling Powersell and Linux to demonstrate practical applications. ',
-            'Worked regularly with Microsoft 365 applications such as Microsot Purview.'
+            'Researched NIST compliance and conducted weekly presentations/seminars about NIST compliance and best security practices.',
+            'Ran demos involving PowerShell and Linux to demonstrate practical applications.',
+            'Worked regularly with Microsoft 365 applications such as Microsoft Purview.'
           ],
-          icon: 'mdi-briefcase',
-          iconColor: 'orange',
           type: 'Internship',
+          image: cybersecurity,
         },
       ],
     };
@@ -201,13 +202,7 @@ export default {
   font-weight: 700;
 }
 .experience-card {
-  transition: transform 0.3s, background-color 0.3s;
   background-color: #f9f9f9;
-}
-.experience-card:hover {
-  transform: scale(1.05);
-  background-color: #333;
-  color: #fff;
 }
 .v-icon,
 .font-weight-medium,
