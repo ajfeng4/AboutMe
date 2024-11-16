@@ -1,7 +1,16 @@
 <template>
   <v-row class="mb-4" align="center">
-    <v-btn icon v-for="(icon, index) in icons" :key="index">
-      <v-icon>{{ icon }}</v-icon>
+    <v-btn
+        v-for="(media, index) in socialMedia"
+        :key="index"
+        class="social-btn"
+        :style="{ backgroundColor: media.color }"
+        :href="media.link"
+        :target="media.isEmail ? '_self' : '_blank'"
+        text
+    >
+      <v-icon class="mr-2">{{ media.icon }}</v-icon>
+      <span class="social-text">{{ media.name }}</span>
     </v-btn>
   </v-row>
 </template>
@@ -11,14 +20,35 @@ export default {
   name: 'SocialMedia',
   data() {
     return {
-      icons: ['mdi-github', 'mdi-twitter', 'mdi-facebook', 'mdi-linkedin'],
+      socialMedia: [
+        { icon: 'mdi-github', name: 'GitHub', color: '#333', link: 'https://github.com/ajfeng4' },
+        { icon: 'mdi-linkedin', name: 'LinkedIn', color: '#0077b5', link: 'https://www.linkedin.com/in/ajfeng/' },
+        { icon: 'mdi-medium', name: 'Medium', color: '#000000', link: 'https://medium.com/' },
+        { icon: 'mdi-gmail', name: 'Gmail', color: '#D14836', link: 'mailto:ajfengcs@gmail.com', isEmail: true },
+        { icon: 'mdi-outlook', name: 'Outlook', color: '#0072C6', link: 'mailto:ajfeng@buffalo.edu', isEmail: true },
+      ],
     };
   },
 };
 </script>
 
 <style scoped>
-.v-btn {
+.social-btn {
+  display: flex;
+  align-items: center;
   margin-right: 10px;
+  color: white;
+  border-radius: 30px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  opacity: 0.9;
+}
+
+.social-text {
+  font-size: 14px;
+  font-weight: 500;
 }
 </style>
