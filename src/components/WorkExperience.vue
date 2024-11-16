@@ -49,7 +49,21 @@
                   </v-col>
                 </v-row>
 
-                <p class="text--secondary mt-3">{{ experience.description }}</p>
+                <v-list class="mt-3">
+                  <v-list-item
+                      v-for="(item, idx) in experience.description"
+                      :key="idx"
+                      class="bullet-point"
+                  >
+                    <v-card class="bullet-card pa-3 mb-3">
+                      <v-row align="center">
+                        <v-icon color="primary" class="mr-2">mdi-checkbox-marked-circle-outline</v-icon>
+                        <span>{{ item }}</span>
+                      </v-row>
+                    </v-card>
+                  </v-list-item>
+                </v-list>
+
               </v-col>
             </v-row>
           </v-card>
@@ -70,27 +84,45 @@ export default {
           company: 'University at Buffalo School of Dental Medicine',
           location: 'Buffalo, New York',
           date: 'Sep 2024 - Present',
-          description: 'Brief description of the role and responsibilities, highlighting key achievements and contributions...',
+          description: [
+            'Modernized and refined the School of Dental Medicine (SDM) website to streamline the application process for prospective applicants.',
+            'Identified and fixed inconsistencies and bugs on the SDM website; recommended and implemented enhancements to improve user experience.',
+            'Collaborated closely with SDM admissions, conducting regular meetings and interviews with students to gather critical feedback for website improvements.',
+          ],
           icon: 'mdi-briefcase',
           iconColor: 'blue',
           type: 'Part-Time',
         },
         {
-          title: 'Undergraduate Research Asssitant',
+          title: 'Undergraduate Research Assistant',
           company: 'University at Buffalo School of Engineering and Applied Sciences',
           location: 'Buffalo, New York',
           date: 'Aug 2024 - Present',
-          description: 'Brief description of the role and responsibilities, highlighting key achievements and contributions...',
+          description: [
+            'Developed a React Native mobile application for Professor Wenyao Xu Drink Intake Project to monitor users drinking habits based on detected drinking sounds.',
+            'Composed research proposals and delivered weekly reports during stand-up meetings with Professor Xu.',
+              'Utilized React Native Framework, React Native Paper, TypeScript, and Tailwind CSS for front-end development.',
+              'Implemented Python and Flask for the back end, integrating AWS for database management.',
+              'Designed and presented UI/UX prototypes using Figma to professors, Ph.D. researchers, and potential users.',
+              'Integrated Software Development Life Cycle (SDLC) processes and managed tasks using Kanban boards like Trello and Jira.'
+          ],
           icon: 'mdi-briefcase',
           iconColor: 'green',
           type: 'Part-Time',
         },
         {
-          title: 'Undergraduate Teaching Asssitant',
+          title: 'Undergraduate Teaching Assistant',
           company: 'University at Buffalo School of Engineering and Applied Sciences',
           location: 'Buffalo, New York',
           date: 'Aug 2024 - Present',
-          description: 'Brief description of the role and responsibilities, highlighting key achievements and contributions...',
+          description: [
+            'Assisted the professor in teaching CSE410: 3D Game Development using C++ and Unreal Engine to over 100 students.',
+            'Held weekly office hours to provide guidance and support to students.',
+              'Led and mentored groups of students in developing games, fostering collaboration and technical skills.',
+              'Graded weekly assignments and provided constructive feedback.',
+              'Responded to student inquiries and facilitated discussions through Piazza.',
+              '-Supported students in learning and applying C++ and Unreal Engine for game development projects',
+          ],
           icon: 'mdi-briefcase',
           iconColor: 'orange',
           type: 'Internship',
@@ -98,9 +130,15 @@ export default {
         {
           title: 'Software Engineer Intern',
           company: 'Site Service Software Inc',
-          location: 'Jamison, Pennslyvania',
+          location: 'Jamison, Pennsylvania',
           date: 'Aug 2024 - Present',
-          description: 'Brief description of the role and responsibilities, highlighting key achievements and contributions...',
+          description: [
+            'Migrated legacy systems to Java and Spring Boot, increasing efficiency by 35% and reducing maintenance costs.',
+            'Updated the front end of legacy software using JavaScript and Tailwind CSS, reducing technical debt.',
+              'Utilized Azure SQL to build and connect user databases.',
+              'Collaborated with cross-functional teams using Git to ensure successful integration and maintain clean code.',
+              'Participated in weekly stand-up meetings and full software development cycles, adhering to Agile methodologies.'
+          ],
           icon: 'mdi-briefcase',
           iconColor: 'orange',
           type: 'Internship',
@@ -110,7 +148,13 @@ export default {
           company: 'Hungie',
           location: 'Queens, New York',
           date: 'May 2024 - Aug 2024',
-          description: 'Brief description of the role and responsibilities, highlighting key achievements and contributions...',
+          description: [
+            'Developed a mobile iOS/Android app powered by AI to recommend and cater food based on users taste preferences.',
+            'Implemented scalable full-stack features using TypeScript, React Native, Python, and Firebase.',
+              'Reduced technical debt by 50% through the use of Tailwind CSS and API optimizations, improving load times by 20%.',
+              'Integrated alternative APIs and services such as SendGrid, Twilio, and Swagger, reducing costs significantly and overhauled deprecated systems.',
+              'Collaborated with cross-functional teams using tools like Notion, Trello, Jira, and Figma for work-flow management and front-end development.'
+          ],
           icon: 'mdi-briefcase',
           iconColor: 'orange',
           type: 'Internship',
@@ -120,7 +164,25 @@ export default {
           company: 'Undergraduate Student Association - UB',
           location: 'Buffalo, New York',
           date: 'May 2024 - Aug 2024',
-          description: 'Brief description of the role and responsibilities, highlighting key achievements and contributions...',
+          description: [
+            'Negotiated competitive rates with vendors, saving student clubs signifacent annually.',
+            'Managed large amount of weekly purchase orders, maintaining transparency and accuracy. ',
+              'Led a team of 5 Procurement Assistants, refine procurement process to better serve undergraduate clubs'
+          ],
+          icon: 'mdi-briefcase',
+          iconColor: 'orange',
+          type: 'Internship',
+        },
+        {
+          title: 'Cybersecurity Analyst',
+          company: 'Technical Consulting & Research Inc',
+          location: 'Weston, Connecticut',
+          date: 'March 2024 - May 2024',
+          description: [
+            'Researched NIST compliance and conducted weekly presentations/seminars about NIST compliance and best security practices. ',
+            'Ran demoing invovling Powersell and Linux to demonstrate practical applications. ',
+            'Worked regularly with Microsoft 365 applications such as Microsot Purview.'
+          ],
           icon: 'mdi-briefcase',
           iconColor: 'orange',
           type: 'Internship',
@@ -142,16 +204,17 @@ export default {
   transition: transform 0.3s, background-color 0.3s;
   background-color: #f9f9f9;
 }
-
 .experience-card:hover {
   transform: scale(1.05);
   background-color: #333;
   color: #fff;
 }
-
 .v-icon,
 .font-weight-medium,
 .text--secondary {
   color: inherit;
+}
+.bullet-card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 </style>
