@@ -1,5 +1,6 @@
 <script setup>
 import { Icon } from '@iconify/vue';
+import ProjectLinkButton from './ProjectLinkButton.vue';
 
 const projects = [
   {
@@ -7,8 +8,20 @@ const projects = [
     title: "Drink Intake App",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
-    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
-    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    links: [
+      {
+        icon: "mdi-github",
+        name: "GitHub",
+        color: "#333",
+        href: "https://github.com/ajfeng4/DrinkIntakeResearch"
+      },
+      {
+        icon: "mdi-web",
+        name: "Website",
+        color: "#2196F3",
+        href: "https://github.com/ajfeng4/DrinkIntakeResearch"
+      }
+    ],
     tags: [
       { icon: "mdi-language-typescript", name: "TypeScript", color: "#007acc" },
       { icon: "simple-icons:python", name: "Python", color: "#3776AB" },
@@ -17,7 +30,6 @@ const projects = [
       { icon: "simple-icons:postgresql", name: "Postgresql", color: "#4169E1" },
       { icon: "simple-icons:expo", name: "Expo Go", color: "#000020" },
       { icon: "simple-icons:reactrouter", name: "React Router", color: "#CA4245" },
-
     ],
   },
   {
@@ -25,15 +37,26 @@ const projects = [
     title: "Find a Mechanic",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
-    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
-    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    links: [
+      {
+        icon: "mdi-github",
+        name: "GitHub",
+        color: "#333",
+        href: "https://github.com/ajfeng4/FindAMechanic"
+      },
+      {
+        icon: "mdi-web",
+        name: "Website",
+        color: "#2196F3",
+        href: "https://findamechanic.com"
+      }
+    ],
     tags: [
       { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
       { icon: "simple-icons:php", name: "PHP", color: "#777BB4" },
       { icon: "simple-icons:mysql", name: "MySQL", color: "#4479A1" },
       { icon: "mdi-react", name: "React Native", color: "#61dafb" },
       { icon: "simple-icons:expo", name: "Expo Go", color: "#000020" },
-
     ],
   },
   {
@@ -41,8 +64,20 @@ const projects = [
     title: "Hungie Mobile App",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
-    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
-    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    links: [
+      {
+        icon: "mdi-github",
+        name: "GitHub",
+        color: "#333",
+        href: "https://github.com/ajfeng4/HungieMobileApp"
+      },
+      {
+        icon: "mdi-web",
+        name: "Website",
+        color: "#2196F3",
+        href: "https://hungieapp.com"
+      }
+    ],
     tags: [
       { icon: "mdi-language-typescript", name: "TypeScript", color: "#007acc" },
       { icon: "simple-icons:python", name: "Python", color: "#3776AB" },
@@ -52,7 +87,6 @@ const projects = [
       { icon: "simple-icons:flask", name: "Flask", color: "#000000" },
       { icon: "simple-icons:firebase", name: "Firebase", color: "#DD2C00" },
       { icon: "simple-icons:expo", name: "Expo Go", color: "#000020" },
-
     ],
   },
   {
@@ -60,8 +94,20 @@ const projects = [
     title: "Dystopia",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
-    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
-    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    links: [
+      {
+        icon: "mdi-github",
+        name: "GitHub",
+        color: "#333",
+        href: "https://github.com/ajfeng4/Dystopia"
+      },
+      {
+        icon: "mdi-web",
+        name: "Website",
+        color: "#2196F3",
+        href: "https://dystopia.com"
+      }
+    ],
     tags: [
       { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
       { icon: "simple-icons:css3", name: "CSS", color: "#1572B6" },
@@ -74,8 +120,20 @@ const projects = [
     title: "Inventory Manager",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
-    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
-    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    links: [
+      {
+        icon: "mdi-github",
+        name: "GitHub",
+        color: "#333",
+        href: "https://github.com/ajfeng4/InventoryManager"
+      },
+      {
+        icon: "mdi-web",
+        name: "Website",
+        color: "#2196F3",
+        href: "https://inventorymanager.com"
+      }
+    ],
     tags: [
       { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
       { icon: "simple-icons:css3", name: "CSS", color: "#1572B6" },
@@ -89,8 +147,20 @@ const projects = [
     title: "Brighterspace",
     description: "Project to keep track of user intake",
     icon: "mdi-code-tags",
-    githubLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
-    websiteLink: "https://github.com/ajfeng4/DrinkIntakeResearch",
+    links: [
+      {
+        icon: "mdi-github",
+        name: "GitHub",
+        color: "#333",
+        href: "https://github.com/ajfeng4/Brighterspace"
+      },
+      {
+        icon: "mdi-web",
+        name: "Website",
+        color: "#2196F3",
+        href: "https://brighterspace.com"
+      }
+    ],
     tags: [
       { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
       { icon: "simple-icons:css3", name: "CSS", color: "#1572B6" },
@@ -100,7 +170,6 @@ const projects = [
       { icon: "simple-icons:apache", name: "Apache", color: "#D22128" },
     ],
   },
-
 ];
 </script>
 
@@ -117,12 +186,16 @@ const projects = [
             <v-col cols="10">
               <div class="project-header">
                 <h2 class="headline font-weight-bold">{{ project.title }}</h2>
-                <v-btn icon :href="project.githubLink" target="_blank">
-                  <v-icon>mdi-github</v-icon>
-                </v-btn>
-                <v-btn icon :href="project.websiteLink" target="_blank">
-                  <v-icon>mdi-web</v-icon>
-                </v-btn>
+                <div class="links">
+                  <ProjectLinkButton
+                      v-for="(link, linkIndex) in project.links"
+                      :key="linkIndex"
+                      :icon="link.icon"
+                      :text="link.name"
+                      :href="link.href"
+                      :color="link.color"
+                  />
+                </div>
               </div>
               <p class="subtitle-1 text--primary font-weight-light">{{ project.year }}</p>
               <p class="body-2 mb-4">{{ project.description }}</p>
@@ -156,6 +229,11 @@ const projects = [
 .project-header h2 {
   margin-right: 16px;
 }
+.links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -174,4 +252,3 @@ const projects = [
   font-weight: 500;
 }
 </style>
-
