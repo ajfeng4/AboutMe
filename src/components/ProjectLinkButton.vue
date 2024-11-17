@@ -10,18 +10,22 @@ defineProps({
 
 <template>
   <a :href="href" target="_blank" class="link-button" :style="{ backgroundColor: color }">
-    <Icon :icon="icon" width="20" height="20" color="white" />
-    <span style="color: white; margin-left: 8px;">{{ text }}</span>
+    <Icon :icon="icon" width="16" height="16" color="white" />
+    <span class="link-text">{{ text }}</span>
   </a>
 </template>
 
 <style scoped>
 .link-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  padding: 9px;
-  border-radius: 30px;
-  margin-left: 1px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
   text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.link-text {
+  color: white;
 }
 </style>

@@ -187,12 +187,23 @@ const projects = [
         <v-card class="project-card" outlined>
           <v-card-header class="project-header">
             <Icon :icon="project.icon" class="project-icon" />
-            <div class="project-info">
+            <div class="project-title-container">
               <h2 class="project-title">{{ project.title }}</h2>
-              <p class="project-year">{{ project.year }}</p>
+              <div class="project-links">
+                <ProjectLinkButton
+                    v-for="(link, linkIndex) in project.links"
+                    :key="linkIndex"
+                    :icon="link.icon"
+                    :text="link.name"
+                    :href="link.href"
+                    :color="link.color"
+                    class="link-button"
+                />
+              </div>
             </div>
           </v-card-header>
           <v-card-text>
+            <p class="project-year">{{ project.year }}</p>
             <p class="project-description">{{ project.description }}</p>
             <div class="project-tags">
               <div
@@ -206,17 +217,6 @@ const projects = [
               </div>
             </div>
           </v-card-text>
-          <v-card-actions>
-            <ProjectLinkButton
-                v-for="(link, linkIndex) in project.links"
-                :key="linkIndex"
-                :icon="link.icon"
-                :text="link.name"
-                :href="link.href"
-                :color="link.color"
-                class="link-button"
-            />
-          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -239,7 +239,7 @@ const projects = [
 .project-header {
   display: flex;
   align-items: center;
-  padding-bottom: 0;
+  width: 100%;
 }
 
 .project-icon {
@@ -248,19 +248,29 @@ const projects = [
   margin-right: 1rem;
 }
 
-.project-info {
+.project-title-container {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .project-title {
   font-size: 1.5rem;
   margin: 0;
+  flex-grow: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
 }
 
 .project-year {
   font-size: 0.9rem;
   color: #757575;
+  margin-top: 0.5rem;
 }
 
 .project-description {
@@ -293,6 +303,12 @@ const projects = [
 }
 
 .link-button {
-  margin-right: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
 }
 </style>
