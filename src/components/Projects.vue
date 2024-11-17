@@ -175,43 +175,48 @@ const projects = [
 
 <template>
   <v-container>
-    <h1 class="text-center display-1 mb-8">Coding Projects</h1>
+    <h1 class="title">Coding Projects</h1>
     <v-row>
-      <v-col cols="12" v-for="(project, index) in projects" :key="index">
-        <v-card outlined class="pa-4 mb-6">
-          <v-row align="center">
-            <v-col cols="2" class="text-center">
-              <v-icon size="80" color="primary">{{ project.icon }}</v-icon>
-            </v-col>
-            <v-col cols="10">
-              <div class="project-header">
-                <h2 class="headline font-weight-bold">{{ project.title }}</h2>
-                <div class="links">
-                  <ProjectLinkButton
-                      v-for="(link, linkIndex) in project.links"
-                      :key="linkIndex"
-                      :icon="link.icon"
-                      :text="link.name"
-                      :href="link.href"
-                      :color="link.color"
-                  />
-                </div>
+      <v-col
+          v-for="(project, index) in projects"
+          :key="index"
+          cols="12"
+          sm="6"
+          md="4"
+      >
+        <v-card class="project-card" outlined>
+          <v-card-header class="project-header">
+            <Icon :icon="project.icon" class="project-icon" />
+            <div class="project-info">
+              <h2 class="project-title">{{ project.title }}</h2>
+              <p class="project-year">{{ project.year }}</p>
+            </div>
+          </v-card-header>
+          <v-card-text>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tags">
+              <div
+                  v-for="(tag, tagIndex) in project.tags"
+                  :key="tagIndex"
+                  class="tag"
+                  :style="{ backgroundColor: tag.color }"
+              >
+                <Icon :icon="tag.icon" class="tag-icon" />
+                <span class="tag-text">{{ tag.name }}</span>
               </div>
-              <p class="subtitle-1 text--primary font-weight-light">{{ project.year }}</p>
-              <p class="body-2 mb-4">{{ project.description }}</p>
-              <div class="tags">
-                <div
-                    v-for="(tag, tagIndex) in project.tags"
-                    :key="tagIndex"
-                    class="tag-container"
-                    :style="{ backgroundColor: tag.color }"
-                >
-                  <Icon :icon="tag.icon" width="30" height="30" class="mr-2" color="white" />
-                  <span class="tag-text" style="color: white;">{{ tag.name }}</span>
-                </div>
-              </div>
-            </v-col>
-          </v-row>
+            </div>
+          </v-card-text>
+          <v-card-actions>
+            <ProjectLinkButton
+                v-for="(link, linkIndex) in project.links"
+                :key="linkIndex"
+                :icon="link.icon"
+                :text="link.name"
+                :href="link.href"
+                :color="link.color"
+                class="link-button"
+            />
+          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -219,36 +224,75 @@ const projects = [
 </template>
 
 <style scoped>
-.display-1 {
+.title {
+  text-align: center;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
 }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .project-header {
   display: flex;
   align-items: center;
+  padding-bottom: 0;
 }
-.project-header h2 {
-  margin-right: 16px;
+
+.project-icon {
+  font-size: 3rem;
+  color: #1976d2;
+  margin-right: 1rem;
 }
-.links {
+
+.project-info {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
 }
-.tags {
+
+.project-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.project-year {
+  font-size: 0.9rem;
+  color: #757575;
+}
+
+.project-description {
+  margin-bottom: 1rem;
+  color: #424242;
+}
+
+.project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0.5rem;
 }
-.tag-container {
+
+.tag {
   display: flex;
   align-items: center;
-  padding: 9px;
-  border-radius: 30px;
-  margin-left: 1px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
 }
+
+.tag-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
 .tag-text {
-  margin-left: 4px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.link-button {
+  margin-right: 0.5rem;
 }
 </style>
