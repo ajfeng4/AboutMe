@@ -6,8 +6,8 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Drink Intake App",
-    description: "Project to keep track of user intake",
-    icon: "mdi-code-tags",
+    description: "React Native IOS/Andriod App to keep track of user's hydration levels. The app helps build and recommend hydration goals and plans to help users meet their daily hydration needs and maintain a more healthier life-style and habits",
+    icon: "mdi-cup",
     links: [
       {
         icon: "mdi-github",
@@ -35,8 +35,8 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Find a Mechanic",
-    description: "Project to keep track of user intake",
-    icon: "mdi-code-tags",
+    description: "React Native IOS/Andriod App to connect customers to local mechanics in their area. Part of CSE302's Experential Learning and Research course",
+    icon: "mdi-car-wrench",
     links: [
       {
         icon: "mdi-github",
@@ -62,8 +62,8 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Hungie Mobile App",
-    description: "Project to keep track of user intake",
-    icon: "mdi-code-tags",
+    description: "Invovled in building an AI powered food buddy built to recommend and cater meals to meet the specific taste buds and preferences of users. Utilizing comprehensive alogrithms and machine learning models to serve up specific recommendations to meet the user's pallete. Developed front-end with clean and efficent user interfaces using Typescript,React Native and Tailwind CSS. Processed and managed backend with user perferences using Python and Flask. Ran the mobile IOS/Andriod environment using Expo Go. Managed and built the app's database and authentication using Firebase, Google Cloud and Sendgrid",
+    icon: "mdi-food",
     links: [
       {
         icon: "mdi-github",
@@ -92,8 +92,8 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Dystopia",
-    description: "Project to keep track of user intake",
-    icon: "mdi-code-tags",
+    description: "Responsive social media application that gives users the full power to shape their social media landscape. Utilized JavaScript,Typescript,CSS and HTML to build a clean and responsive front-end. Dystopia is available not only through the web but also available and compatible on mobile. Utilized Swagger API to manage the backend database and to fetch and modify user attributes. Collaborated closely with a team of four software engineers to meet weekly objectives and maintain a strict and effective Agile enivronment meeting the requirements set by the Project Manager",
+    icon: "mdi-fire-circle",
     links: [
       {
         icon: "mdi-github",
@@ -118,8 +118,8 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Inventory Manager",
-    description: "Project to keep track of user intake",
-    icon: "mdi-code-tags",
+    description: "Inventory Manager is a mobile friendly website built to keep track of a user's pantry and their storage",
+    icon: "mdi-cart",
     links: [
       {
         icon: "mdi-github",
@@ -131,7 +131,7 @@ const projects = [
         icon: "mdi-web",
         name: "Website",
         color: "#2196F3",
-        href: "https://inventorymanager.com"
+        href: ""
       }
     ],
     tags: [
@@ -145,8 +145,8 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Brighterspace",
-    description: "Project to keep track of user intake",
-    icon: "mdi-code-tags",
+    description: "An interactive educational platform bridging the disconnect between learning and teaching. Utilized JavaScript,Typescript,React.js for front-end developement to build clean and scalabe screens and pages. Utilized PHP to manage the back-end database, to fetch and modify student data and retreive and display user atrributes. Utilized Apache to host the platform. Worked in an agile environment and meet weekly sprints and objectives set by the project manager",
+    icon: "mdi-school",
     links: [
       {
         icon: "mdi-github",
