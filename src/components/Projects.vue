@@ -1,6 +1,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import ProjectLinkButton from './ProjectLinkButton.vue';
+import placeholderImage from '../assets/davis.png';
 
 const projects = [
   {
@@ -203,6 +204,7 @@ const projects = [
             </div>
           </v-card-header>
           <v-card-text>
+            <img :src="placeholderImage" alt="Project Image" class="project-image" />
             <p class="project-year">{{ project.year }}</p>
             <p class="project-description">{{ project.description }}</p>
             <div class="project-tags">
@@ -265,6 +267,14 @@ const projects = [
   display: flex;
   gap: 0.5rem;
   margin-left: 1rem;
+}
+
+.project-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 1rem 0;
 }
 
 .project-year {
