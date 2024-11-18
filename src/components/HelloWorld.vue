@@ -66,6 +66,8 @@
     <div id="contact">
       <ContactMe />
     </div>
+
+    <Footer />
   </v-container>
 </template>
 
@@ -77,6 +79,7 @@ import Education from '../components/Education.vue';
 import Projects from '../components/Projects.vue';
 import GitHubStats from '../components/GitHubStats.vue';
 import ContactMe from '../components/ContactMe.vue';
+import Footer from '../components/Footer.vue';
 
 export default {
   name: 'MainPage',
@@ -88,6 +91,7 @@ export default {
     Projects,
     GitHubStats,
     ContactMe,
+    Footer,
   },
 };
 </script>

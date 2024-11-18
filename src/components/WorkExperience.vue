@@ -14,7 +14,9 @@
           >
             <v-row>
               <v-col cols="2" class="d-flex align-center justify-center">
-                <v-img :src="experience.image" width="80" height="80" contain></v-img>
+                <div class="image-container">
+                  <v-img :src="experience.image" contain></v-img>
+                </div>
               </v-col>
               <v-col cols="10">
                 <v-row>
@@ -75,12 +77,12 @@
 
 <script>
 import Dental from '@/assets/dental.png';
-import Research from '@/assets/logo.png';
-import Teaching from '@/assets/logo.png';
-import Internship1 from '@/assets/logo.png';
-import Hungie from '@/assets/logo.png';
-import SA from '@/assets/logo.png';
-import cybersecurity from '@/assets/logo.png';
+import Research from '@/assets/davis.png';
+import Teaching from '@/assets/davis.png';
+import Internship1 from '@/assets/service.png';
+import Hungie from '@/assets/hungie.png';
+import SA from '@/assets/sa.png';
+import cybersecurity from '@/assets/tcr.png';
 
 export default {
   name: 'WorkExperience',
@@ -211,5 +213,24 @@ export default {
 }
 .bullet-card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.image-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  background-color: #fff;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .image-container {
+    width: 60px;
+    height: 60px;
+  }
 }
 </style>
