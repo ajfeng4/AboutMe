@@ -33,6 +33,10 @@
       <CodingSkills />
     </div>
 
+    <div id="tools">
+      <CodingTools />
+    </div>
+
     <div id="education">
       <v-row class="my-12">
         <v-col cols="12">
@@ -74,6 +78,7 @@
 <script>
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
+import CodingTools from '../components/CodingTools.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
 import Projects from '../components/Projects.vue';
@@ -86,6 +91,7 @@ export default {
   components: {
     SocialMedia,
     CodingSkills,
+    CodingTools,
     WorkExperience,
     Education,
     Projects,
@@ -100,7 +106,6 @@ export default {
 .custom-spacer {
   height: 350px;
 }
-
 .v-row.my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
