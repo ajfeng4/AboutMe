@@ -41,11 +41,21 @@ export default {
       skills: [
         { name: 'TypeScript', icon: 'mdi-language-typescript', color: '#007acc' },
         { name: 'JavaScript', icon: 'mdi-language-javascript', color: '#f0db4f' },
-        { name: 'React.js', icon: 'mdi-react', color: '#f0db4f' },
-        { name: 'React Native', icon: 'mdi-react', color: '#61dafb' },
         { name: 'CSS', icon: 'bx bxl-css3', color: '#264de4' },
         { name: 'HTML', icon: 'bx bxl-html5', color: '#e34c26' },
+        { name: 'React.js', icon: 'mdi-react', color: '#f0db4f' },
+        { name: 'React Native', icon: 'mdi-react', color: '#61dafb' },
         { name: 'Vue.js', icon: 'mdi-vuejs', color: '#42b883' },
+        { name: 'Angular', icon: 'bx bxl-angular', color: '#dd0031' },
+        { name: 'Node.js', icon: 'mdi-nodejs', color: '#43853d' },
+        { name: 'Python', icon: 'bx bxl-python', color: '#3776ab' },
+        { name: 'Java', icon: 'bx bxl-java', color: '#007396' },
+        { name: 'C++', icon: 'bx bxl-c-plus-plus', color: '#00599c' },
+        { name: 'Spring Boot', icon: 'bx bxl-spring-boot', color: '#6db33f' },
+        { name: 'SQL', icon: 'bx bxs-data', color: '#e38c00' },
+        { name: 'PostgreSQL', icon: 'bx bxl-postgresql', color: '#336791' },
+        { name: 'Firebase', icon: 'bx bxl-firebase', color: '#ffca28' },
+        { name: 'Supabase', icon: 'bx bxl-supabase', color: '#3ecf8e' },
         { name: 'Git', icon: 'mdi-git', color: '#f34f29' }
       ],
     };
