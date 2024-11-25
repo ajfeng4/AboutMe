@@ -7,3 +7,25 @@ $error: #FF5252;
 $info: #2196F3;
 $success: #4CAF50;
 $warning: #FB8C00;
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 600px,
+        md: 960px,
+        lg: 1280px,
+        xl: 1920px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
+
+$body-font-size: 16px;
+$heading-font-size: 2rem;
+$font-family: 'Roboto', sans-serif;
+
+$html-font-size: 16px;
+$text-color: #424242;
