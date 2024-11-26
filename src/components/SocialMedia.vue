@@ -1,15 +1,15 @@
 <template>
-  <v-row class="mb-4" align="center">
+  <v-row class="mb-4" align="center" justify="center" style="flex-wrap: nowrap;">
     <v-btn
         v-for="(media, index) in socialMedia"
         :key="index"
         class="social-btn"
-        :style="{ backgroundColor: media.color }"
+        :style="{ backgroundColor: media.color, width: 'auto' }"
         :href="media.link"
         :target="media.isEmail ? '_self' : '_blank'"
         text
     >
-      <v-icon class="mr-2">{{ media.icon }}</v-icon>
+      <v-icon class="mr-2" size="18">{{ media.icon }}</v-icon>
       <span class="social-text">{{ media.name }}</span>
     </v-btn>
   </v-row>
@@ -34,13 +34,14 @@ export default {
 
 <style scoped>
 .social-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  margin-right: 10px;
+  margin: 4px;
   color: white;
-  border-radius: 30px;
-  padding: 8px 16px;
+  border-radius: 20px;
+  padding: 6px 12px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .social-btn:hover {
@@ -48,7 +49,7 @@ export default {
 }
 
 .social-text {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
 }
 </style>
