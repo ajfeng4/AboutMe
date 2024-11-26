@@ -16,22 +16,24 @@
         </v-col>
 
         <v-col cols="12" md="6" class="text-center">
-          <v-card flat>
-            <v-icon size="150" color="grey">mdi-account-circle</v-icon>
-          </v-card>
         </v-col>
       </v-row>
     </div>
+
+    <v-row class="my-10">
+      <v-col cols="12" md="6" class="text-center">
+        <AnimatedImage />
+      </v-col>
+      <v-col cols="12" md="6">
+        <CodingSkills />
+      </v-col>
+    </v-row>
 
     <v-row>
       <v-col cols="12">
         <v-spacer class="custom-spacer"></v-spacer>
       </v-col>
     </v-row>
-
-    <div id="skills">
-      <CodingSkills />
-    </div>
 
     <div id="tools">
       <CodingTools />
@@ -78,6 +80,7 @@
 <script>
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
+import AnimatedImage from '../components/AnimatedImage.vue';
 import CodingTools from '../components/CodingTools.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
@@ -91,6 +94,7 @@ export default {
   components: {
     SocialMedia,
     CodingSkills,
+    AnimatedImage,
     CodingTools,
     WorkExperience,
     Education,
