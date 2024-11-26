@@ -10,18 +10,34 @@
           cols="4"
           sm="3"
           md="2"
-          class="d-flex justify-center"
+          class="d-flex justify-center align-center"
       >
-        <div class="skill-card">
+        <div
+            class="skill-card"
+            @mouseover="hoverSkill = index"
+            @mouseleave="hoverSkill = null"
+        >
           <template v-if="isMdiIcon(skill.icon)">
-            <v-icon :size="60" class="mb-2" :style="{ color: skill.color }">
+            <v-icon
+                :size="60"
+                class="mb-2"
+                :style="{ color: hoverSkill === index ? skill.color : '#b0b0b0' }"
+            >
               {{ skill.icon }}
             </v-icon>
           </template>
           <template v-else>
-            <i :class="[skill.icon, 'boxicon-size']" :style="{ color: skill.color }"></i>
+            <i
+                :class="[skill.icon, 'boxicon-size']"
+                :style="{ color: hoverSkill === index ? skill.color : '#b0b0b0' }"
+            ></i>
           </template>
-          <span class="skill-name">{{ skill.name }}</span>
+          <span
+              class="skill-name"
+              :style="{ color: hoverSkill === index ? '#000' : '#b0b0b0' }"
+          >
+            {{ skill.name }}
+          </span>
         </div>
       </v-col>
     </v-row>
@@ -33,6 +49,7 @@ export default {
   name: "CodingSkills",
   data() {
     return {
+      hoverSkill: null,
       skills: [
         { name: "TypeScript", icon: "mdi-language-typescript", color: "#007acc" },
         { name: "JavaScript", icon: "mdi-language-javascript", color: "#f0db4f" },
@@ -65,25 +82,20 @@ export default {
 
 <style scoped>
 .skill-card {
-  transition: transform 0.3s, background-color 0.3s;
-  width: 100%;
   text-align: center;
   padding: 16px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
 .skill-card:hover {
   transform: scale(1.05);
-  background-color: #f0f0f0;
 }
 
 .skill-name {
   display: block;
   margin-top: 8px;
   font-weight: 600;
-  color: #333;
+  font-size: 14px;
 }
 
 .boxicon-size {
