@@ -1,58 +1,68 @@
 <template>
-  <v-container>
-    <v-row align="center" justify="center" class="my-10">
+  <v-container fluid class="text-center my-10">
+    <h2 class="display-2 font-weight-bold">
+      My <span style="font-weight: 900;">Education</span>
+    </h2>
+    <v-row justify="center">
       <v-col cols="12" md="10">
-        <v-card flat>
-          <h1 class="display-2 font-weight-bold mb-5">My Education</h1>
-
-          <v-card
-              v-for="(education, index) in educations"
-              :key="index"
-              outlined
-              elevation="2"
-              class="education-card mb-5 py-4 px-6"
-          >
-            <v-row>
-              <v-col cols="1" class="d-flex align-center justify-center">
-                <v-icon :color="education.iconColor" size="40">{{ education.icon }}</v-icon>
-              </v-col>
-              <v-col cols="11">
-                <v-row>
-                  <v-col cols="8" class="d-flex align-center">
-                    <h3 class="font-weight-bold">
-                      {{ education.degree }}
-                    </h3>
-                    <v-chip
-                        v-if="education.type"
-                        class="ml-3"
-                        color="blue lighten-4"
-                        text-color="blue darken-2"
-                        small
-                    >
-                      {{ education.type }}
-                    </v-chip>
-                  </v-col>
-                </v-row>
-
-                <v-row align="center" class="mt-2">
-                  <v-col cols="4" class="d-flex align-center">
-                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-school</v-icon>
-                    <span>{{ education.school }}</span>
-                  </v-col>
-                  <v-col cols="4" class="d-flex align-center">
-                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-map-marker</v-icon>
-                    <span>{{ education.location }}</span>
-                  </v-col>
-                  <v-col cols="4" class="d-flex align-center justify-end">
-                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-calendar</v-icon>
-                    <span>{{ education.date }}</span>
-                  </v-col>
-                </v-row>
-
-                <p class="text--secondary mt-3">{{ education.description }}</p>
-              </v-col>
-            </v-row>
-          </v-card>
+        <v-card
+            v-for="(education, index) in educations"
+            :key="index"
+            class="education-card my-5"
+            outlined
+        >
+          <v-row class="align-center">
+            <v-col cols="2" class="text-center">
+              <v-icon :size="40" :style="{ color: education.iconColor }">
+                {{ education.icon }}
+              </v-icon>
+            </v-col>
+            <v-col cols="8">
+              <div class="d-flex align-center">
+                <h3 class="education-major ml-2">
+                  {{ education.major }}
+                </h3>
+              </div>
+              <span>
+                <v-chip
+                    small
+                    color="blue lighten-4"
+                    text-color="blue darken-2"
+                >
+                  {{ education.type }}
+                </v-chip>
+                <v-chip
+                    small
+                    class="ml-2"
+                    color="green lighten-4"
+                    text-color="green darken-2"
+                >
+                  {{ education.degreeType }}
+                </v-chip>
+              </span>
+              <span class="education-school">
+                {{ education.school }}
+              </span>
+              <div class="d-flex align-center mt-2">
+                <v-icon
+                    color="grey darken-1"
+                    size="20"
+                    class="mr-1"
+                >mdi-map-marker</v-icon>
+                <span class="education-location">
+                  {{ education.location }}
+                </span>
+              </div>
+              <p class="education-description mt-3">
+                {{ education.description }}
+              </p>
+            </v-col>
+            <v-col cols="2" class="text-right">
+              <div class="education-date">
+                {{ education.date }}
+              </div>
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>
@@ -66,7 +76,8 @@ export default {
     return {
       educations: [
         {
-          degree: 'Bachelor of Science in Computer Science',
+          degreeType: 'Bachelor of Science',
+          major: 'Computer Science',
           school: 'University at Buffalo, State University of New York',
           location: 'Buffalo, New York',
           date: 'Jan 2022 - Present',
@@ -76,7 +87,9 @@ export default {
           type: 'Undergraduate',
         },
         {
-          degree: 'Bachelor of Business Administration in Management Information Systems and Supply Chain Management',
+          degreeType: 'Bachelor of Business Administration',
+          major:
+              'Management Information Systems and Supply Chain Management',
           school: 'University at Buffalo, State University of New York',
           location: 'Buffalo, New York',
           date: 'Jan 2022 - Present',
@@ -92,26 +105,50 @@ export default {
 </script>
 
 <style scoped>
-.display-2 {
-  color: #333;
-}
-.font-weight-bold {
-  font-weight: 700;
-}
 .education-card {
+  padding: 24px;
+  background-color: #fff;
+  width: 600px;
+  height: 200px;
+  margin-left: -75px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   transition: transform 0.3s, background-color 0.3s;
-  background-color: #f9f9f9;
 }
 
 .education-card:hover {
-  transform: scale(1.05);
-  background-color: #333;
-  color: #fff;
+  transform: scale(1.02);
+  background-color: #f9f9f9;
 }
 
-.v-icon,
-.font-weight-medium,
-.text--secondary {
-  color: inherit;
+.education-major {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.education-school {
+  display: block;
+  font-size: 12px;
+  color: #757575;
+  margin-top: 4px;
+}
+
+.education-location,
+.education-date {
+  font-size: 12px;
+  color: #757575;
+}
+
+.education-description {
+  font-size: 16px;
+  color: #424242;
+  margin-top: 8px;
+}
+
+.v-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

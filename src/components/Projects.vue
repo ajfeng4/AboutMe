@@ -7,7 +7,7 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Drink Intake App",
-    description: "React Native IOS/Andriod App to keep track of user's hydration levels. The app helps build and recommend hydration goals and plans to help users meet their daily hydration needs and maintain a more healthier life-style and habits",
+    description: "React Native iOS/Android app to track user's hydration levels. The app helps build and recommend hydration goals to help users meet their daily hydration needs and maintain a healthier lifestyle.",
     icon: "mdi-cup",
     links: [
       {
@@ -28,7 +28,7 @@ const projects = [
       { icon: "simple-icons:python", name: "Python", color: "#3776AB" },
       { icon: "mdi-react", name: "React Native", color: "#61dafb" },
       { icon: "simple-icons:supabase", name: "Supabase", color: "#3ECF8E" },
-      { icon: "simple-icons:postgresql", name: "Postgresql", color: "#4169E1" },
+      { icon: "simple-icons:postgresql", name: "PostgreSQL", color: "#4169E1" },
       { icon: "simple-icons:expo", name: "Expo Go", color: "#000020" },
       { icon: "simple-icons:reactrouter", name: "React Router", color: "#CA4245" },
     ],
@@ -36,7 +36,7 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Find a Mechanic",
-    description: "React Native IOS/Andriod App to connect customers to local mechanics in their area. Part of CSE302's Experential Learning and Research course",
+    description: "React Native iOS/Android app connecting customers to local mechanics. Part of CSE302's Experiential Learning and Research course.",
     icon: "mdi-car-wrench",
     links: [
       {
@@ -63,7 +63,7 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Hungie Mobile App",
-    description: "Invovled in building an AI powered food buddy built to recommend and cater meals to meet the specific taste buds and preferences of users. Utilizing comprehensive alogrithms and machine learning models to serve up specific recommendations to meet the user's pallete. Developed front-end with clean and efficent user interfaces using Typescript,React Native and Tailwind CSS. Processed and managed backend with user perferences using Python and Flask. Ran the mobile IOS/Andriod environment using Expo Go. Managed and built the app's database and authentication using Firebase, Google Cloud and Sendgrid",
+    description: "AI-powered food buddy recommending meals based on user preferences. Developed front-end with TypeScript, React Native, and Tailwind CSS. Managed backend with Python and Flask. Ran the mobile environment using Expo Go. Managed database and authentication with Firebase and Google Cloud.",
     icon: "mdi-food",
     links: [
       {
@@ -93,7 +93,7 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Dystopia",
-    description: "Responsive social media application that gives users the full power to shape their social media landscape. Utilized JavaScript,Typescript,CSS and HTML to build a clean and responsive front-end. Dystopia is available not only through the web but also available and compatible on mobile. Utilized Swagger API to manage the backend database and to fetch and modify user attributes. Collaborated closely with a team of four software engineers to meet weekly objectives and maintain a strict and effective Agile enivronment meeting the requirements set by the Project Manager",
+    description: "Responsive social media application empowering users to shape their social media landscape. Utilized JavaScript, TypeScript, CSS, and HTML for front-end. Managed backend with Swagger API. Collaborated in an Agile environment with a team of four software engineers.",
     icon: "mdi-fire-circle",
     links: [
       {
@@ -119,7 +119,7 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Inventory Manager",
-    description: "Inventory Manager is a mobile friendly website built to keep track of a user's pantry and their storage",
+    description: "Mobile-friendly website to track user's pantry and storage.",
     icon: "mdi-cart",
     links: [
       {
@@ -138,7 +138,7 @@ const projects = [
     tags: [
       { icon: "mdi-language-javascript", name: "JavaScript", color: "#F7DF1E" },
       { icon: "simple-icons:css3", name: "CSS", color: "#1572B6" },
-      { icon: "simple-icons:mui", name: "MaterialUI", color: "#007FFF" },
+      { icon: "simple-icons:mui", name: "Material UI", color: "#007FFF" },
       { icon: "simple-icons:nextdotjs", name: "Next.js", color: "#000000" },
       { icon: "simple-icons:vercel", name: "Vercel", color: "#000000" },
     ],
@@ -146,7 +146,7 @@ const projects = [
   {
     year: "Fall 2024",
     title: "Brighterspace",
-    description: "An interactive educational platform bridging the disconnect between learning and teaching. Utilized JavaScript,Typescript,React.js for front-end developement to build clean and scalabe screens and pages. Utilized PHP to manage the back-end database, to fetch and modify student data and retreive and display user atrributes. Utilized Apache to host the platform. Worked in an agile environment and meet weekly sprints and objectives set by the project manager",
+    description: "Interactive educational platform bridging the gap between learning and teaching. Used JavaScript, TypeScript, React.js for front-end. Managed backend with PHP and MySQL. Hosted the platform on Apache. Worked in an Agile environment to meet weekly sprints.",
     icon: "mdi-school",
     links: [
       {
@@ -177,7 +177,7 @@ const projects = [
 <template>
   <v-container>
     <h1 class="title">Coding Projects</h1>
-    <v-row>
+    <v-row dense>
       <v-col
           v-for="(project, index) in projects"
           :key="index"
@@ -228,8 +228,8 @@ const projects = [
 <style scoped>
 .title {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-card {
@@ -241,84 +241,83 @@ const projects = [
 .project-header {
   display: flex;
   align-items: center;
-  width: 100%;
+  padding: 8px;
 }
 
 .project-icon {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #1976d2;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .project-title-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0;
-  flex-grow: 1;
 }
 
 .project-links {
   display: flex;
   gap: 0.5rem;
-  margin-left: 1rem;
 }
 
 .project-image {
   width: 100%;
-  height: 300px;
-  border-radius: 12px;
+  height: 200px;
+  border-radius: 8px;
   object-fit: cover;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .project-year {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #757575;
   margin-top: 0.5rem;
 }
 
 .project-description {
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
   color: #424242;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .tag {
   display: flex;
   align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
 }
 
 .tag-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 0.5rem;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.3rem;
 }
 
 .tag-text {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #fff;
 }
 
 .link-button {
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
+  gap: 0.3rem;
+  font-size: 0.75rem;
 }
 </style>
