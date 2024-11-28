@@ -1,59 +1,60 @@
 <template>
-  <v-container>
-    <v-row align="center" justify="center" class="my-10">
-      <v-col cols="12" md="10">
-        <v-card flat>
-          <h1 class="display-2 font-weight-bold mb-5">My Education</h1>
-
-          <v-card
-              v-for="(education, index) in educations"
-              :key="index"
-              outlined
-              elevation="2"
-              class="education-card mb-5 py-4 px-6"
+  <v-container class="text-center my-10">
+    <h2 class="display-2 font-weight-bold">
+      My <span style="font-weight: 900;">Education</span>
+    </h2>
+    <v-row justify="center" align="center">
+      <v-col
+          v-for="(education, index) in educations"
+          :key="index"
+          cols="12"
+          sm="6"
+          md="4"
+          class="d-flex justify-center align-center"
+      >
+        <div
+            class="education-card"
+            @mouseover="hoverEducation = index"
+            @mouseleave="hoverEducation = null"
+        >
+          <v-icon
+              :size="60"
+              class="mb-2"
+              :style="{ color: hoverEducation === index ? education.iconColor : '#b0b0b0' }"
           >
-            <v-row>
-              <v-col cols="1" class="d-flex align-center justify-center">
-                <v-icon :color="education.iconColor" size="40">{{ education.icon }}</v-icon>
-              </v-col>
-              <v-col cols="11">
-                <v-row>
-                  <v-col cols="8" class="d-flex align-center">
-                    <h3 class="font-weight-bold">
-                      {{ education.degree }}
-                    </h3>
-                    <v-chip
-                        v-if="education.type"
-                        class="ml-3"
-                        color="blue lighten-4"
-                        text-color="blue darken-2"
-                        small
-                    >
-                      {{ education.type }}
-                    </v-chip>
-                  </v-col>
-                </v-row>
-
-                <v-row align="center" class="mt-2">
-                  <v-col cols="4" class="d-flex align-center">
-                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-school</v-icon>
-                    <span>{{ education.school }}</span>
-                  </v-col>
-                  <v-col cols="4" class="d-flex align-center">
-                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-map-marker</v-icon>
-                    <span>{{ education.location }}</span>
-                  </v-col>
-                  <v-col cols="4" class="d-flex align-center justify-end">
-                    <v-icon color="grey darken-1" size="20" class="mr-2">mdi-calendar</v-icon>
-                    <span>{{ education.date }}</span>
-                  </v-col>
-                </v-row>
-
-                <p class="text--secondary mt-3">{{ education.description }}</p>
-              </v-col>
-            </v-row>
-          </v-card>
-        </v-card>
+            {{ education.icon }}
+          </v-icon>
+          <h3
+              class="education-degree"
+              :style="{ color: hoverEducation === index ? '#000' : '#b0b0b0' }"
+          >
+            {{ education.degree }}
+          </h3>
+          <span
+              class="education-school"
+              :style="{ color: hoverEducation === index ? '#000' : '#b0b0b0' }"
+          >
+            {{ education.school }}
+          </span>
+          <span
+              class="education-location"
+              :style="{ color: hoverEducation === index ? '#000' : '#b0b0b0' }"
+          >
+            {{ education.location }}
+          </span>
+          <span
+              class="education-date"
+              :style="{ color: hoverEducation === index ? '#000' : '#b0b0b0' }"
+          >
+            {{ education.date }}
+          </span>
+          <p
+              class="education-description"
+              :style="{ color: hoverEducation === index ? '#000' : '#b0b0b0' }"
+          >
+            {{ education.description }}
+          </p>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -64,6 +65,7 @@ export default {
   name: 'Education',
   data() {
     return {
+      hoverEducation: null,
       educations: [
         {
           degree: 'Bachelor of Science in Computer Science',
@@ -92,26 +94,29 @@ export default {
 </script>
 
 <style scoped>
-.display-2 {
-  color: #333;
-}
-.font-weight-bold {
-  font-weight: 700;
-}
 .education-card {
-  transition: transform 0.3s, background-color 0.3s;
-  background-color: #f9f9f9;
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.3s;
 }
 
 .education-card:hover {
   transform: scale(1.05);
-  background-color: #333;
-  color: #fff;
 }
 
-.v-icon,
-.font-weight-medium,
-.text--secondary {
-  color: inherit;
+.education-degree {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.education-school,
+.education-location,
+.education-date,
+.education-description {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
 }
 </style>

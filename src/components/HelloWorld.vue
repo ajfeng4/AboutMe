@@ -14,7 +14,6 @@
             <SocialMedia />
           </v-card>
         </v-col>
-
         <v-col cols="12" md="6" class="text-center">
         </v-col>
       </v-row>
@@ -41,8 +40,11 @@
 
     <div id="education">
       <v-row class="my-12">
-        <v-col cols="12">
+        <v-col cols="12" md="6">
           <Education />
+        </v-col>
+        <v-col cols="12" md="6" class="text-center">
+          <AnimatedImage />
         </v-col>
       </v-row>
     </div>
