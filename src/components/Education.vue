@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="text-center my-10">
+  <v-container fluid class="text-left my-10">
     <h2 class="display-2 font-weight-bold">
       My <span style="font-weight: 900;">Education</span>
     </h2>
@@ -11,38 +11,24 @@
             class="education-card my-5"
             outlined
         >
-          <v-row class="align-center">
-            <v-col cols="2" class="text-center">
-              <v-icon :size="40" :style="{ color: education.iconColor }">
-                {{ education.icon }}
-              </v-icon>
+          <v-row class="align-start">
+            <v-col cols="2" class="text-left">
+              <v-img :src="education.image" max-width="200"></v-img>
             </v-col>
-            <v-col cols="8">
-              <div class="d-flex align-center">
-                <h3 class="education-major ml-2">
-                  {{ education.major }}
-                </h3>
+            <v-col cols="10" class="text-left">
+              <div class="d-flex justify-space-between align-start">
+                <div class="education-details">
+                  <h3 class="education-major ml-2">
+                    {{ education.major }}
+                  </h3>
+                  <span class="education-school">
+                    {{ education.school }}
+                  </span>
+                </div>
+                <div class="education-date">
+                  {{ education.date }}
+                </div>
               </div>
-              <span>
-                <v-chip
-                    small
-                    color="blue lighten-4"
-                    text-color="blue darken-2"
-                >
-                  {{ education.type }}
-                </v-chip>
-                <v-chip
-                    small
-                    class="ml-2"
-                    color="green lighten-4"
-                    text-color="green darken-2"
-                >
-                  {{ education.degreeType }}
-                </v-chip>
-              </span>
-              <span class="education-school">
-                {{ education.school }}
-              </span>
               <div class="d-flex align-center mt-2">
                 <v-icon
                     color="grey darken-1"
@@ -57,11 +43,6 @@
                 {{ education.description }}
               </p>
             </v-col>
-            <v-col cols="2" class="text-right">
-              <div class="education-date">
-                {{ education.date }}
-              </div>
-            </v-col>
           </v-row>
         </v-card>
       </v-col>
@@ -70,6 +51,8 @@
 </template>
 
 <script>
+import NorthCampus from "@/assets/northcampus.png";
+
 export default {
   name: 'Education',
   data() {
@@ -77,11 +60,12 @@ export default {
       educations: [
         {
           degreeType: 'Bachelor of Science',
-          major: 'Computer Science',
+          major: 'BS - Computer Science',
           school: 'University at Buffalo, State University of New York',
           location: 'Buffalo, New York',
           date: 'Jan 2022 - Present',
           description: 'Description',
+          image: NorthCampus,
           icon: 'mdi-school',
           iconColor: 'purple',
           type: 'Undergraduate',
@@ -89,11 +73,12 @@ export default {
         {
           degreeType: 'Bachelor of Business Administration',
           major:
-              'Management Information Systems and Supply Chain Management',
+              'BBA - Management Information Systems and Supply Chain Management',
           school: 'University at Buffalo, State University of New York',
           location: 'Buffalo, New York',
           date: 'Jan 2022 - Present',
           description: 'Description',
+          image: NorthCampus,
           icon: 'mdi-school',
           iconColor: 'green',
           type: 'Undergraduate',
@@ -114,6 +99,7 @@ export default {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   transition: transform 0.3s, background-color 0.3s;
+  text-align: left;
 }
 
 .education-card:hover {
@@ -123,8 +109,9 @@ export default {
 
 .education-major {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 8px;
+  word-wrap: break-word;
 }
 
 .education-school {
@@ -132,23 +119,41 @@ export default {
   font-size: 12px;
   color: #757575;
   margin-top: 4px;
+  word-wrap: break-word;
 }
 
 .education-location,
 .education-date {
   font-size: 12px;
   color: #757575;
+  white-space: nowrap;
+}
+
+.education-date {
+  flex-shrink: 0;
+  margin-left: 8px;
 }
 
 .education-description {
   font-size: 16px;
   color: #424242;
   margin-top: 8px;
+  word-wrap: break-word;
+}
+
+.education-details {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
 }
 
 .v-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.v-img {
+  margin-right: auto;
 }
 </style>
