@@ -44,7 +44,7 @@
           <Education />
         </v-col>
         <v-col cols="12" md="6" class="text-center">
-          <AnimatedImage />
+          <EducationAnimatedImage />
         </v-col>
       </v-row>
     </div>
@@ -83,6 +83,7 @@
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
 import AnimatedImage from '../components/AnimatedImage.vue';
+import EducationAnimatedImage from '../components/EducationAnimatedImage.vue';
 import CodingTools from '../components/CodingTools.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
@@ -97,6 +98,7 @@ export default {
     SocialMedia,
     CodingSkills,
     AnimatedImage,
+    EducationAnimatedImage,
     CodingTools,
     WorkExperience,
     Education,
