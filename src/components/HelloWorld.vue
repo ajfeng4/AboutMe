@@ -44,14 +44,17 @@
           <Education />
         </v-col>
         <v-col cols="12" md="6" class="text-center">
-          <AnimatedImage />
+          <EducationAnimatedImage />
         </v-col>
       </v-row>
     </div>
 
     <div id="experience">
       <v-row class="my-12">
-        <v-col cols="12">
+        <v-col cols="12" md="6" class="text-center">
+          <ExperienceAnimatedImage />
+        </v-col>
+        <v-col cols="12" md="6">
           <WorkExperience />
         </v-col>
       </v-row>
@@ -83,6 +86,8 @@
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
 import AnimatedImage from '../components/AnimatedImage.vue';
+import EducationAnimatedImage from '../components/EducationAnimatedImage.vue';
+import ExperienceAnimatedImage from '../components/ExperienceAnimatedImage.vue';
 import CodingTools from '../components/CodingTools.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
@@ -97,6 +102,8 @@ export default {
     SocialMedia,
     CodingSkills,
     AnimatedImage,
+    EducationAnimatedImage,
+    ExperienceAnimatedImage,
     CodingTools,
     WorkExperience,
     Education,

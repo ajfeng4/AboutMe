@@ -1,62 +1,45 @@
 <template>
-  <v-container>
-    <v-row align="center" justify="center" class="my-10">
-      <v-col cols="12" md="12">
-        <v-card flat>
-          <h1 class="display-2 font-weight-bold mb-5">My Experience</h1>
-
+  <v-container fluid class="text-left my-10">
+    <h2 class="display-2 font-weight-bold">
+      My <span style="font-weight: 900;">Experience</span>
+    </h2>
+    <div class="scrollable-experience">
+      <v-row justify="center">
+        <v-col cols="12" md="10">
           <v-card
               v-for="(experience, index) in experiences"
               :key="index"
+              class="experience-card my-5"
               outlined
-              elevation="2"
-              class="experience-card mb-5 py-4 px-6"
           >
-            <v-row>
-              <v-col cols="3" class="d-flex align-center justify-center">
-                <div class="image-container">
-                  <v-img :src="experience.image" contain></v-img>
-                </div>
+            <v-row class="align-start">
+              <v-col cols="2" class="text-left">
+                <v-img :src="experience.image" max-width="200"></v-img>
               </v-col>
-              <v-col cols="9">
-                <v-row>
-                  <v-col cols="8" class="d-flex align-center">
-                    <h3 class="font-weight-bold">
+              <v-col cols="10" class="text-left">
+                <div class="d-flex justify-space-between align-start">
+                  <div class="experience-details">
+                    <h3 class="experience-title ml-2">
                       {{ experience.title }}
                     </h3>
-                    <v-chip
-                        v-if="experience.type"
-                        class="ml-3"
-                        color="blue lighten-4"
-                        text-color="blue darken-2"
-                        small
-                    >
-                      {{ experience.type }}
-                    </v-chip>
-                  </v-col>
-                </v-row>
-
-                <v-row align="center" class="mt-2">
-                  <v-col cols="4" class="d-flex align-center">
-                    <v-icon color="grey darken-1" size="20" class="mr-2"
-                    >mdi-office-building</v-icon
-                    >
-                    <span>{{ experience.company }}</span>
-                  </v-col>
-                  <v-col cols="4" class="d-flex align-center">
-                    <v-icon color="grey darken-1" size="20" class="mr-2"
-                    >mdi-map-marker</v-icon
-                    >
-                    <span>{{ experience.location }}</span>
-                  </v-col>
-                  <v-col cols="4" class="d-flex align-center justify-end">
-                    <v-icon color="grey darken-1" size="20" class="mr-2"
-                    >mdi-calendar</v-icon
-                    >
-                    <span>{{ experience.date }}</span>
-                  </v-col>
-                </v-row>
-
+                    <span class="experience-company">
+                      {{ experience.company }}
+                    </span>
+                  </div>
+                  <div class="experience-date">
+                    {{ experience.date }}
+                  </div>
+                </div>
+                <div class="d-flex align-center mt-2">
+                  <v-icon
+                      color="grey darken-1"
+                      size="20"
+                      class="mr-1"
+                  >mdi-map-marker</v-icon>
+                  <span class="experience-location">
+                    {{ experience.location }}
+                  </span>
+                </div>
                 <v-list class="mt-3">
                   <v-list-item
                       v-for="(item, idx) in experience.description"
@@ -76,9 +59,9 @@
               </v-col>
             </v-row>
           </v-card>
-        </v-card>
-      </v-col>
-    </v-row>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 
@@ -111,7 +94,8 @@ export default {
         },
         {
           title: "Undergraduate Research Assistant",
-          company: "University at Buffalo School of Engineering and Applied Sciences",
+          company:
+              "University at Buffalo School of Engineering and Applied Sciences",
           location: "Buffalo, New York",
           date: "Aug 2024 - Present",
           description: [
@@ -127,7 +111,8 @@ export default {
         },
         {
           title: "Undergraduate Teaching Assistant",
-          company: "University at Buffalo School of Engineering and Applied Sciences",
+          company:
+              "University at Buffalo School of Engineering and Applied Sciences",
           location: "Buffalo, New York",
           date: "Aug 2024 - Present",
           description: [
@@ -211,28 +196,78 @@ export default {
   font-weight: 700;
 }
 .experience-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  width: 100%;
-}
-.v-icon,
-.font-weight-medium,
-.text--secondary {
-  color: inherit;
-}
-.bullet-card {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.image-container {
-  width: 150px;
-  height: 150px;
-  border-radius: 12px;
-  overflow: hidden;
+  padding: 24px;
   background-color: #fff;
+  width: 120%;
+  margin-left: -50px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: left;
 }
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.experience-title {
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+.experience-company {
+  display: block;
+  font-size: 12px;
+  color: #757575;
+  margin-top: 4px;
+  word-wrap: break-word;
+}
+.experience-location,
+.experience-date {
+  font-size: 12px;
+  color: #757575;
+  white-space: nowrap;
+}
+.experience-date {
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+.experience-description {
+  font-size: 12px;
+  color: #424242;
+  margin-top: 8px;
+  word-wrap: break-word;
+}
+.experience-details {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+.v-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.v-img {
+  margin-right: auto;
+}
+.scrollable-experience {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* Scrollbar Styles */
+.scrollable-experience::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollable-experience::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.scrollable-experience::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+.scrollable-experience::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+.scrollable-experience {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
 }
 </style>
