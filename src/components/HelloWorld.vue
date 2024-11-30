@@ -62,7 +62,10 @@
 
     <div id="projects">
       <v-row class="my-12">
-        <v-col cols="12">
+        <v-col cols="12" md="6" class="text-center">
+          <ProjectsAnimatedImage />
+        </v-col>
+        <v-col cols="12" md="6">
           <Projects />
         </v-col>
       </v-row>
@@ -88,6 +91,7 @@ import CodingSkills from '../components/CodingSkills.vue';
 import AnimatedImage from '../components/AnimatedImage.vue';
 import EducationAnimatedImage from '../components/EducationAnimatedImage.vue';
 import ExperienceAnimatedImage from '../components/ExperienceAnimatedImage.vue';
+import ProjectsAnimatedImage from '../components/ProjectsAnimatedImage.vue';
 import CodingTools from '../components/CodingTools.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
@@ -104,6 +108,7 @@ export default {
     AnimatedImage,
     EducationAnimatedImage,
     ExperienceAnimatedImage,
+    ProjectsAnimatedImage,
     CodingTools,
     WorkExperience,
     Education,
