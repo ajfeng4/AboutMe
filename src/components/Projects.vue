@@ -312,7 +312,6 @@ const projects = [
   overflow-y: auto;
   overflow-x: hidden;
 }
-/* Scrollbar Styles */
 .scrollable-projects::-webkit-scrollbar {
   width: 8px;
 }
