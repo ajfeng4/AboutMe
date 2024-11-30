@@ -40,22 +40,9 @@
                     {{ experience.location }}
                   </span>
                 </div>
-                <v-list class="mt-3">
-                  <v-list-item
-                      v-for="(item, idx) in experience.description"
-                      :key="idx"
-                      class="bullet-point"
-                  >
-                    <v-card class="bullet-card pa-3 mb-3">
-                      <v-row align="center">
-                        <v-icon color="primary" class="mr-2"
-                        >mdi-checkbox-marked-circle-outline</v-icon
-                        >
-                        <span>{{ item }}</span>
-                      </v-row>
-                    </v-card>
-                  </v-list-item>
-                </v-list>
+                <div class="experience-description mt-3">
+                  <p v-for="(item, idx) in experience.description" :key="idx">{{ item }}</p>
+                </div>
               </v-col>
             </v-row>
           </v-card>

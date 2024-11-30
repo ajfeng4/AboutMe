@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import ProjectLinkButton from './ProjectLinkButton.vue';
 import placeholderImage from '../assets/davis.png';
@@ -175,142 +176,128 @@ const projects = [
 </script>
 
 <template>
-  <v-container>
-    <h1 class="title">Coding Projects</h1>
-    <v-row dense>
-      <v-col
-          v-for="(project, index) in projects"
-          :key="index"
-          cols="12"
-          sm="6"
-          md="4"
-      >
-        <v-card class="project-card" outlined>
-          <v-card-header class="project-header">
-            <Icon :icon="project.icon" class="project-icon" />
-            <div class="project-title-container">
-              <h2 class="project-title">{{ project.title }}</h2>
-              <div class="project-links">
-                <ProjectLinkButton
-                    v-for="(link, linkIndex) in project.links"
-                    :key="linkIndex"
-                    :icon="link.icon"
-                    :text="link.name"
-                    :href="link.href"
-                    :color="link.color"
-                    class="link-button"
-                />
-              </div>
-            </div>
-          </v-card-header>
-          <v-card-text>
-            <img :src="placeholderImage" alt="Project Image" class="project-image" />
-            <p class="project-year">{{ project.year }}</p>
-            <p class="project-description">{{ project.description }}</p>
-            <div class="project-tags">
-              <div
-                  v-for="(tag, tagIndex) in project.tags"
-                  :key="tagIndex"
-                  class="tag"
-                  :style="{ backgroundColor: tag.color }"
-              >
-                <Icon :icon="tag.icon" class="tag-icon" />
-                <span class="tag-text">{{ tag.name }}</span>
-              </div>
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+  <v-container fluid class="text-left my-10">
+    <h2 class="display-2 font-weight-bold">
+      My <span style="font-weight: 900;">Projects</span>
+    </h2>
+    <div class="scrollable-projects">
+      <v-row justify="center">
+        <v-col cols="12" md="10">
+          <v-card
+              v-for="(project, index) in projects"
+              :key="index"
+              class="project-card my-5"
+              outlined
+          >
+            <v-row class="align-start">
+              <v-col cols="2" class="text-left">
+                <Icon :icon="project.icon" class="project-icon" />
+              </v-col>
+              <v-col cols="10" class="text-left">
+                <div class="d-flex justify-space-between align-start">
+                  <div class="project-details">
+                    <h3 class="project-title">
+                      {{ project.title }}
+                    </h3>
+                    <div class="project-links">
+                      <ProjectLinkButton
+                          v-for="(link, linkIndex) in project.links"
+                          :key="linkIndex"
+                          :icon="link.icon"
+                          :text="link.name"
+                          :href="link.href"
+                          :color="link.color"
+                          class="link-button"
+                      />
+                    </div>
+                  </div>
+                  <div class="project-year">
+                    {{ project.year }}
+                  </div>
+                </div>
+                <div class="project-description mt-3">
+                  <p>{{ project.description }}</p>
+                </div>
+                <div class="project-tags mt-2">
+                  <div
+                      v-for="(tag, tagIndex) in project.tags"
+                      :key="tagIndex"
+                      class="tag"
+                      :style="{ backgroundColor: tag.color }"
+                  >
+                    <Icon :icon="tag.icon" class="tag-icon" />
+                    <span class="tag-text">{{ tag.name }}</span>
+                  </div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 
 <style scoped>
-.title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.display-2 {
+  color: #333;
 }
-
+.font-weight-bold {
+  font-weight: 700;
+}
 .project-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: left;
 }
-
-.project-header {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-}
-
 .project-icon {
   font-size: 2rem;
   color: #1976d2;
-  margin-right: 0.5rem;
 }
-
-.project-title-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-grow: 1;
+.project-details {
+  flex: 1;
+  min-width: 0;
 }
-
 .project-title {
+  font-weight: 500;
   font-size: 1.2rem;
-  margin: 0;
+  margin-bottom: 8px;
 }
-
 .project-links {
   display: flex;
   gap: 0.5rem;
 }
-
-.project-image {
-  width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  object-fit: cover;
-  margin: 0.5rem 0;
-}
-
 .project-year {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #757575;
-  margin-top: 0.5rem;
+  white-space: nowrap;
 }
-
 .project-description {
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
   color: #424242;
 }
-
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
 }
-
 .tag {
   display: flex;
   align-items: center;
   padding: 0.2rem 0.5rem;
   border-radius: 12px;
 }
-
 .tag-icon {
   width: 16px;
   height: 16px;
   margin-right: 0.3rem;
 }
-
 .tag-text {
   font-size: 0.75rem;
   color: #fff;
 }
-
 .link-button {
   padding: 0.2rem 0.5rem;
   border-radius: 12px;
@@ -319,5 +306,24 @@ const projects = [
   align-items: center;
   gap: 0.3rem;
   font-size: 0.75rem;
+}
+.scrollable-projects {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scrollable-projects::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollable-projects::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.scrollable-projects::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+.scrollable-projects::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
 </style>
