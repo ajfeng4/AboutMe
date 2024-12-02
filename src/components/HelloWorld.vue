@@ -7,7 +7,6 @@
             <h1 class="display-2 font-weight-bold mb-3">Hello, I'm Alex Feng</h1>
             <h2 class="headline font-weight-bold">Software Engineer</h2>
             <h3 class="subheading font-weight-bold mb-3">Brooklyn, New York</h3>
-            <AboutMe />
             <SocialMedia />
           </v-card>
         </v-col>
@@ -15,6 +14,15 @@
         </v-col>
       </v-row>
     </div>
+
+    <v-row class="my-10">
+      <v-col cols="12" md="6">
+        <AboutMe />
+      </v-col>
+      <v-col cols="12" md="6" class="text-center">
+        <AnimatedImage />
+      </v-col>
+    </v-row>
 
     <v-row class="my-10">
       <v-col cols="12" md="6" class="text-center">
