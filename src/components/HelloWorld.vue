@@ -7,10 +7,6 @@
             <h1 class="display-2 font-weight-bold mb-3">Hello, I'm Alex Feng</h1>
             <h2 class="headline font-weight-bold">Software Engineer</h2>
             <h3 class="subheading font-weight-bold mb-3">Brooklyn, New York</h3>
-            <p class="body-1 mb-4">
-              A full-time student taking a full course load and working 40 hours a week. Passionate about front-end and mobile development,
-              with experience in technical and non-technical environments. An experienced team player and seasoned leader.
-            </p>
             <SocialMedia />
           </v-card>
         </v-col>
@@ -18,6 +14,15 @@
         </v-col>
       </v-row>
     </div>
+
+    <v-row class="my-10">
+      <v-col cols="12" md="6">
+        <AboutMe />
+      </v-col>
+      <v-col cols="12" md="6" class="text-center">
+        <AnimatedImage />
+      </v-col>
+    </v-row>
 
     <v-row class="my-10">
       <v-col cols="12" md="6" class="text-center">
@@ -62,11 +67,11 @@
 
     <div id="projects">
       <v-row class="my-12">
-        <v-col cols="12" md="6" class="text-center">
-          <ProjectsAnimatedImage />
-        </v-col>
         <v-col cols="12" md="6">
           <Projects />
+        </v-col>
+        <v-col cols="12" md="6" class="text-center">
+          <ProjectsAnimatedImage />
         </v-col>
       </v-row>
     </div>
@@ -99,6 +104,7 @@ import Projects from '../components/Projects.vue';
 import GitHubStats from '../components/GitHubStats.vue';
 import ContactMe from '../components/ContactMe.vue';
 import Footer from '../components/Footer.vue';
+import AboutMe from '../components/AboutMe.vue';
 
 export default {
   name: 'MainPage',
@@ -116,6 +122,7 @@ export default {
     GitHubStats,
     ContactMe,
     Footer,
+    AboutMe,
   },
 };
 </script>
