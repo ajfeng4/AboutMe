@@ -62,11 +62,11 @@
 
     <div id="projects">
       <v-row class="my-12">
-        <v-col cols="12" md="6" class="text-center">
-          <ProjectsAnimatedImage />
-        </v-col>
         <v-col cols="12" md="6">
           <Projects />
+        </v-col>
+        <v-col cols="12" md="6" class="text-center">
+          <ProjectsAnimatedImage />
         </v-col>
       </v-row>
     </div>
