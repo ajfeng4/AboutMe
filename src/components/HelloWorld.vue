@@ -3,12 +3,7 @@
     <div id="about">
       <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="6">
-          <v-card flat>
-            <h1 class="display-2 font-weight-bold mb-3">Hello, I'm Alex Feng</h1>
-            <h2 class="headline font-weight-bold">Software Engineer</h2>
-            <h3 class="subheading font-weight-bold mb-3">Brooklyn, New York</h3>
-            <SocialMedia />
-          </v-card>
+          <Landing />
         </v-col>
         <v-col cols="12" md="6" class="text-center">
         </v-col>
@@ -91,6 +86,7 @@
 </template>
 
 <script>
+import Landing from '../components/Landing.vue';
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
 import AnimatedImage from '../components/AnimatedImage.vue';
@@ -109,6 +105,7 @@ import AboutMe from '../components/AboutMe.vue';
 export default {
   name: 'MainPage',
   components: {
+    Landing,
     SocialMedia,
     CodingSkills,
     AnimatedImage,
