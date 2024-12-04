@@ -6,6 +6,7 @@
           <Landing />
         </v-col>
         <v-col cols="12" md="6" class="text-center">
+          <ProfilePic />
         </v-col>
       </v-row>
     </div>
@@ -15,7 +16,7 @@
         <AboutMe />
       </v-col>
       <v-col cols="12" md="6" class="text-center">
-        <AnimatedImage />
+        <LandingPic />
       </v-col>
     </v-row>
 
@@ -101,6 +102,8 @@ import GitHubStats from '../components/GitHubStats.vue';
 import ContactMe from '../components/ContactMe.vue';
 import Footer from '../components/Footer.vue';
 import AboutMe from '../components/AboutMe.vue';
+import ProfilePic from '../components/ProfilePic.vue';
+import LandingPic from '../components/LandingPic.vue';
 
 export default {
   name: 'MainPage',
@@ -120,6 +123,8 @@ export default {
     ContactMe,
     Footer,
     AboutMe,
+    ProfilePic,
+    LandingPic,
   },
 };
 </script>
