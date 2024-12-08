@@ -14,7 +14,7 @@ export default {
   props: {
     giphyUrl: {
       type: String,
-      default: "https://media.giphy.com/media/Oj25fisQ3zhukVWY96/giphy.gif",
+      default: "https://media.giphy.com/media/PyNo0O6NqwMTTeZjd3/giphy.gif",
     },
   },
 };

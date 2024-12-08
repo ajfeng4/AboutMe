@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <div id="about">
+  <div style="width:100%;margin:0;padding:0;">
+    <div id="about" class="section">
       <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="6">
           <Landing />
@@ -11,89 +11,89 @@
       </v-row>
     </div>
 
-    <v-row class="my-10">
-      <v-col cols="12" md="6">
-        <AboutMe />
-      </v-col>
-      <v-col cols="12" md="6" class="text-center">
-        <LandingPic />
-      </v-col>
-    </v-row>
-
-    <v-row class="my-10">
-      <v-col cols="12" md="6" class="text-center">
-        <AnimatedImage />
-      </v-col>
-      <v-col cols="12" md="6">
-        <CodingSkills />
-      </v-col>
-    </v-row>
-
-    <v-row>
-      <v-col cols="12">
-        <v-spacer class="custom-spacer"></v-spacer>
-      </v-col>
-    </v-row>
-
-    <div id="tools">
-      <CodingTools />
-    </div>
-
-    <div id="education">
-      <v-row class="my-12">
+    <div id="landing-section" class="section">
+      <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="6">
-          <Education />
+          <AboutMe />
         </v-col>
         <v-col cols="12" md="6" class="text-center">
-          <EducationAnimatedImage />
+          <LandingPic />
         </v-col>
       </v-row>
     </div>
 
-    <div id="experience">
-      <v-row class="my-12">
-        <v-col cols="12" md="6" class="text-center">
-          <ExperienceAnimatedImage />
+    <div id="skills-section" class="section">
+      <v-row align="center" justify="center" class="my-10">
+        <v-col cols="12" md="8" class="text-center">
+          <CodingSkills />
         </v-col>
-        <v-col cols="12" md="6">
+      </v-row>
+    </div>
+
+    <div id="spacer-section" class="section">
+      <v-row align="center" justify="center">
+        <v-col cols="12">
+          <v-spacer class="custom-spacer"></v-spacer>
+        </v-col>
+      </v-row>
+    </div>
+
+    <div id="tools" class="section">
+      <v-row align="center" justify="center" class="my-10">
+        <v-col cols="12" md="8">
+          <CodingTools />
+        </v-col>
+      </v-row>
+    </div>
+
+    <div id="education" class="section">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
+          <Education />
+        </v-col>
+      </v-row>
+    </div>
+
+    <div id="experience" class="section">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
           <WorkExperience />
         </v-col>
       </v-row>
     </div>
 
-    <div id="projects">
-      <v-row class="my-12">
-        <v-col cols="12" md="6">
+    <div id="projects" class="section">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
           <Projects />
-        </v-col>
-        <v-col cols="12" md="6" class="text-center">
-          <ProjectsAnimatedImage />
         </v-col>
       </v-row>
     </div>
 
-    <v-row class="my-12">
-      <v-col cols="12">
-        <GitHubStats />
-      </v-col>
-    </v-row>
+    <div id="github-stats" class="section">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
+          <GitHubStats />
+        </v-col>
+      </v-row>
+    </div>
 
-    <div id="contact">
-      <ContactMe />
+    <div id="contact" class="section">
+      <v-row align="center" justify="center" class="my-10">
+        <v-col cols="12" md="8" class="text-center">
+          <ContactMe />
+        </v-col>
+      </v-row>
     </div>
 
     <Footer />
-  </v-container>
+  </div>
 </template>
 
 <script>
 import Landing from '../components/Landing.vue';
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
-import AnimatedImage from '../components/AnimatedImage.vue';
-import EducationAnimatedImage from '../components/EducationAnimatedImage.vue';
-import ExperienceAnimatedImage from '../components/ExperienceAnimatedImage.vue';
-import ProjectsAnimatedImage from '../components/ProjectsAnimatedImage.vue';
 import CodingTools from '../components/CodingTools.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
@@ -111,10 +111,6 @@ export default {
     Landing,
     SocialMedia,
     CodingSkills,
-    AnimatedImage,
-    EducationAnimatedImage,
-    ExperienceAnimatedImage,
-    ProjectsAnimatedImage,
     CodingTools,
     WorkExperience,
     Education,
@@ -136,5 +132,11 @@ export default {
 .v-row.my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
+}
+.section {
+  padding: 20px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 </style>
