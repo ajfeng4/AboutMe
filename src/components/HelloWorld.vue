@@ -1,6 +1,6 @@
 <template>
   <div style="width:100%;margin:0;padding:0;">
-    <div id="about" class="section-gradient">
+    <div id="about" class="section">
       <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="6">
           <Landing />
@@ -11,7 +11,7 @@
       </v-row>
     </div>
 
-    <div id="landing-section" class="section-gradient">
+    <div id="landing-section" class="section">
       <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="6">
           <AboutMe />
@@ -22,7 +22,7 @@
       </v-row>
     </div>
 
-    <div id="skills-section" class="section-gradient">
+    <div id="skills-section" class="section">
       <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="8" class="text-center">
           <CodingSkills />
@@ -30,7 +30,7 @@
       </v-row>
     </div>
 
-    <div id="spacer-section" class="section-gradient">
+    <div id="spacer-section" class="section">
       <v-row align="center" justify="center">
         <v-col cols="12">
           <v-spacer class="custom-spacer"></v-spacer>
@@ -38,7 +38,7 @@
       </v-row>
     </div>
 
-    <div id="tools" class="section-gradient">
+    <div id="tools" class="section">
       <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="8">
           <CodingTools />
@@ -46,7 +46,7 @@
       </v-row>
     </div>
 
-    <div id="education" class="section-gradient">
+    <div id="education" class="section">
       <v-row align="center" justify="center" class="my-12">
         <v-col cols="12" md="8" class="text-center">
           <Education />
@@ -54,7 +54,7 @@
       </v-row>
     </div>
 
-    <div id="experience" class="section-gradient">
+    <div id="experience" class="section">
       <v-row align="center" justify="center" class="my-12">
         <v-col cols="12" md="8" class="text-center">
           <WorkExperience />
@@ -62,7 +62,7 @@
       </v-row>
     </div>
 
-    <div id="projects" class="section-gradient">
+    <div id="projects" class="section">
       <v-row align="center" justify="center" class="my-12">
         <v-col cols="12" md="8" class="text-center">
           <Projects />
@@ -70,7 +70,7 @@
       </v-row>
     </div>
 
-    <div id="github-stats" class="section-gradient">
+    <div id="github-stats" class="section">
       <v-row align="center" justify="center" class="my-12">
         <v-col cols="12" md="8" class="text-center">
           <GitHubStats />
@@ -78,7 +78,7 @@
       </v-row>
     </div>
 
-    <div id="contact" class="section-gradient">
+    <div id="contact" class="section">
       <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="8" class="text-center">
           <ContactMe />
@@ -133,71 +133,7 @@ export default {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-#about {
-  background: linear-gradient(to right, #e0f7fa, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#landing-section {
-  background: linear-gradient(to right, #fff9c4, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#skills-section {
-  background: linear-gradient(to right, #fce4ec, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#spacer-section {
-  background: linear-gradient(to right, #c8e6c9, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#tools {
-  background: linear-gradient(to right, #ffe0b2, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#education {
-  background: linear-gradient(to right, #d1c4e9, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#experience {
-  background: linear-gradient(to right, #bbdefb, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#projects {
-  background: linear-gradient(to right, #ffccbc, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#github-stats {
-  background: linear-gradient(to right, #d7ccc8, #ffffff);
-  padding: 20px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-#contact {
-  background: linear-gradient(to right, #b2ebf2, #ffffff);
+.section {
   padding: 20px;
   margin: 0;
   width: 100%;
