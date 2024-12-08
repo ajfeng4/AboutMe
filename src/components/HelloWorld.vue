@@ -12,7 +12,7 @@
     </div>
 
     <div id="landing-section" class="section-gradient">
-      <v-row class="my-10">
+      <v-row align="center" justify="center" class="my-10">
         <v-col cols="12" md="6">
           <AboutMe />
         </v-col>
@@ -23,18 +23,15 @@
     </div>
 
     <div id="skills-section" class="section-gradient">
-      <v-row class="my-10">
-        <v-col cols="12" md="6" class="text-center">
-          <AnimatedImage />
-        </v-col>
-        <v-col cols="12" md="6">
+      <v-row align="center" justify="center" class="my-10">
+        <v-col cols="12" md="8" class="text-center">
           <CodingSkills />
         </v-col>
       </v-row>
     </div>
 
     <div id="spacer-section" class="section-gradient">
-      <v-row>
+      <v-row align="center" justify="center">
         <v-col cols="12">
           <v-spacer class="custom-spacer"></v-spacer>
         </v-col>
@@ -42,52 +39,51 @@
     </div>
 
     <div id="tools" class="section-gradient">
-      <CodingTools />
+      <v-row align="center" justify="center" class="my-10">
+        <v-col cols="12" md="8">
+          <CodingTools />
+        </v-col>
+      </v-row>
     </div>
 
     <div id="education" class="section-gradient">
-      <v-row class="my-12">
-        <v-col cols="12" md="6">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
           <Education />
-        </v-col>
-        <v-col cols="12" md="6" class="text-center">
-          <EducationAnimatedImage />
         </v-col>
       </v-row>
     </div>
 
     <div id="experience" class="section-gradient">
-      <v-row class="my-12">
-        <v-col cols="12" md="6" class="text-center">
-          <ExperienceAnimatedImage />
-        </v-col>
-        <v-col cols="12" md="6">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
           <WorkExperience />
         </v-col>
       </v-row>
     </div>
 
     <div id="projects" class="section-gradient">
-      <v-row class="my-12">
-        <v-col cols="12" md="6">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
           <Projects />
-        </v-col>
-        <v-col cols="12" md="6" class="text-center">
-          <ProjectsAnimatedImage />
         </v-col>
       </v-row>
     </div>
 
     <div id="github-stats" class="section-gradient">
-      <v-row class="my-12">
-        <v-col cols="12">
+      <v-row align="center" justify="center" class="my-12">
+        <v-col cols="12" md="8" class="text-center">
           <GitHubStats />
         </v-col>
       </v-row>
     </div>
 
     <div id="contact" class="section-gradient">
-      <ContactMe />
+      <v-row align="center" justify="center" class="my-10">
+        <v-col cols="12" md="8" class="text-center">
+          <ContactMe />
+        </v-col>
+      </v-row>
     </div>
 
     <Footer />
@@ -98,10 +94,6 @@
 import Landing from '../components/Landing.vue';
 import SocialMedia from '../components/SocialMedia.vue';
 import CodingSkills from '../components/CodingSkills.vue';
-import AnimatedImage from '../components/AnimatedImage.vue';
-import EducationAnimatedImage from '../components/EducationAnimatedImage.vue';
-import ExperienceAnimatedImage from '../components/ExperienceAnimatedImage.vue';
-import ProjectsAnimatedImage from '../components/ProjectsAnimatedImage.vue';
 import CodingTools from '../components/CodingTools.vue';
 import WorkExperience from '../components/WorkExperience.vue';
 import Education from '../components/Education.vue';
@@ -119,10 +111,6 @@ export default {
     Landing,
     SocialMedia,
     CodingSkills,
-    AnimatedImage,
-    EducationAnimatedImage,
-    ExperienceAnimatedImage,
-    ProjectsAnimatedImage,
     CodingTools,
     WorkExperience,
     Education,
