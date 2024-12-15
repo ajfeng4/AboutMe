@@ -3,52 +3,35 @@
     <h2 class="display-2 font-weight-bold">
       My <span style="font-weight: 900;">Experience</span>
     </h2>
-    <div class="scrollable-experience">
-      <v-row justify="center">
-        <v-col cols="12" md="10">
-          <v-card
-              v-for="(experience, index) in experiences"
-              :key="index"
-              class="experience-card my-5"
-              outlined
-          >
-            <v-row class="align-start">
-              <v-col cols="2" class="text-left">
-                <v-img :src="experience.image" max-width="200"></v-img>
-              </v-col>
-              <v-col cols="10" class="text-left">
-                <div class="d-flex justify-space-between align-start">
-                  <div class="experience-details">
-                    <h3 class="experience-title ml-2">
-                      {{ experience.title }}
-                    </h3>
-                    <span class="experience-company">
-                      {{ experience.company }}
-                    </span>
-                  </div>
-                  <div class="experience-date">
-                    {{ experience.date }}
-                  </div>
-                </div>
-                <div class="d-flex align-center mt-2">
-                  <v-icon
-                      color="grey darken-1"
-                      size="20"
-                      class="mr-1"
-                  >mdi-map-marker</v-icon>
-                  <span class="experience-location">
-                    {{ experience.location }}
-                  </span>
-                </div>
-                <div class="experience-description mt-3">
-                  <p v-for="(item, idx) in experience.description" :key="idx">{{ item }}</p>
-                </div>
-              </v-col>
-            </v-row>
-          </v-card>
-        </v-col>
-      </v-row>
-    </div>
+    <v-row>
+      <v-col
+          cols="12"
+          md="6"
+          v-for="(experience, index) in experiences"
+          :key="index"
+      >
+        <v-card class="education-card my-10">
+          <div class="education-header"></div>
+          <v-row class="align-start">
+            <v-col cols="2" class="text-left logo-col">
+              <v-img :src="experience.image" max-width="80" class="education-logo"></v-img>
+            </v-col>
+            <v-col cols="10" class="text-left">
+              <div class="education-school-name">{{ experience.title }}</div>
+              <div class="education-major-title">{{ experience.company }}</div>
+              <div class="education-date">{{ experience.date }}</div>
+              <div class="education-location d-flex align-center mt-2">
+                <v-icon color="grey darken-1" size="20" class="mr-1">mdi-map-marker</v-icon>
+                {{ experience.location }}
+              </div>
+              <div class="education-description mt-3">
+                <p v-for="(item, idx) in experience.description" :key="idx">{{ item }}</p>
+              </div>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -81,8 +64,7 @@ export default {
         },
         {
           title: "Undergraduate Research Assistant",
-          company:
-              "University at Buffalo School of Engineering and Applied Sciences",
+          company: "University at Buffalo School of Engineering and Applied Sciences",
           location: "Buffalo, New York",
           date: "Aug 2024 - Present",
           description: [
@@ -98,8 +80,7 @@ export default {
         },
         {
           title: "Undergraduate Teaching Assistant",
-          company:
-              "University at Buffalo School of Engineering and Applied Sciences",
+          company: "University at Buffalo School of Engineering and Applied Sciences",
           location: "Buffalo, New York",
           date: "Aug 2024 - Present",
           description: [
@@ -176,85 +157,74 @@ export default {
 </script>
 
 <style scoped>
-.display-2 {
-  color: #333;
-}
-.font-weight-bold {
-  font-weight: 700;
-}
-.experience-card {
-  padding: 24px;
+.education-card {
+  position: relative;
+  padding: 60px 0 20px;
   background-color: #fff;
-  width: 120%;
-  margin-left: -50px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: none;
+  border-radius: 0;
   text-align: left;
 }
-.experience-title {
+
+.education-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: url('../assets/campus.png') center center/cover no-repeat;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.logo-col {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: -30px;
+  margin-left: 10px;
+}
+
+.education-logo {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.education-school-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  word-wrap: break-word;
+}
+
+.education-major-title {
+  font-size: 18px;
   font-weight: 500;
-  font-size: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   word-wrap: break-word;
 }
-.experience-company {
-  display: block;
-  font-size: 12px;
+
+.education-date,
+.education-location {
+  font-size: 14px;
   color: #757575;
-  margin-top: 4px;
-  word-wrap: break-word;
 }
-.experience-location,
-.experience-date {
-  font-size: 12px;
-  color: #757575;
-  white-space: nowrap;
-}
-.experience-date {
-  flex-shrink: 0;
-  margin-left: 8px;
-}
-.experience-description {
-  font-size: 12px;
+
+.education-description {
+  font-size: 14px;
   color: #424242;
-  margin-top: 8px;
+  margin-top: 16px;
   word-wrap: break-word;
 }
-.experience-details {
-  flex: 1;
-  min-width: 0;
-  text-align: left;
-}
+
 .v-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.v-img {
-  margin-right: auto;
-}
-.scrollable-experience {
-  max-height: 420px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-/* Scrollbar Styles */
-.scrollable-experience::-webkit-scrollbar {
-  width: 8px;
-}
-.scrollable-experience::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-.scrollable-experience::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-.scrollable-experience::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-.scrollable-experience {
-  scrollbar-width: thin;
-  scrollbar-color: #c1c1c1 #f1f1f1;
 }
 </style>

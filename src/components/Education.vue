@@ -44,7 +44,7 @@ export default {
       educations: [
         {
           degreeType: 'Bachelor of Science',
-          major: 'BS - Computer Science',
+          major: 'Bachelor of Science in Computer Science',
           school: 'University at Buffalo, State University of New York',
           location: 'Buffalo, New York',
           date: 'Jan 2022 - Present',
@@ -57,7 +57,7 @@ export default {
         {
           degreeType: 'Bachelor of Business Administration',
           major:
-              'BBA - Management Information Systems and Supply Chain Management',
+              'Bachelor of Science in Business Administration',
           school: 'University at Buffalo, State University of New York',
           location: 'Buffalo, New York',
           date: 'Jan 2022 - Present',
@@ -102,7 +102,7 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   margin-top: -60px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .education-logo {
