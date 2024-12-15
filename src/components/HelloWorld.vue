@@ -1,37 +1,37 @@
 <template>
   <div style="width:100%;margin:0;padding:0;">
     <div id="about" class="section">
-      <v-row align="center" justify="center" class="my-10">
-        <v-col cols="12" md="6">
+      <v-row class="my-10">
+        <v-col cols="12">
           <Landing />
         </v-col>
-        <v-col cols="12" md="6" class="text-center">
+        <v-col cols="12">
           <ProfilePic />
         </v-col>
       </v-row>
     </div>
 
     <div id="landing-section" class="section">
-      <v-row align="center" justify="center" class="my-10">
-        <v-col cols="12" md="6">
+      <v-row class="my-10">
+        <v-col cols="12">
           <AboutMe />
         </v-col>
-        <v-col cols="12" md="6" class="text-center">
+        <v-col cols="12">
           <LandingPic />
         </v-col>
       </v-row>
     </div>
 
     <div id="skills-section" class="section">
-      <v-row align="center" justify="center" class="my-10">
-        <v-col cols="12" md="8" class="text-center">
+      <v-row class="my-10">
+        <v-col cols="12">
           <CodingSkills />
         </v-col>
       </v-row>
     </div>
 
     <div id="spacer-section" class="section">
-      <v-row align="center" justify="center">
+      <v-row>
         <v-col cols="12">
           <v-spacer class="custom-spacer"></v-spacer>
         </v-col>
@@ -39,48 +39,48 @@
     </div>
 
     <div id="tools" class="section">
-      <v-row align="center" justify="center" class="my-10">
-        <v-col cols="12" md="8">
+      <v-row class="my-10">
+        <v-col cols="12">
           <CodingTools />
         </v-col>
       </v-row>
     </div>
 
     <div id="education" class="section">
-      <v-row align="center" justify="center" class="my-12">
-        <v-col cols="12" md="8" class="text-center">
+      <v-row class="my-12">
+        <v-col cols="12">
           <Education />
         </v-col>
       </v-row>
     </div>
 
     <div id="experience" class="section">
-      <v-row align="center" justify="center" class="my-12">
-        <v-col cols="12" md="8" class="text-center">
+      <v-row class="my-12">
+        <v-col cols="12">
           <WorkExperience />
         </v-col>
       </v-row>
     </div>
 
     <div id="projects" class="section">
-      <v-row align="center" justify="center" class="my-12">
-        <v-col cols="12" md="8" class="text-center">
+      <v-row class="my-12">
+        <v-col cols="12">
           <Projects />
         </v-col>
       </v-row>
     </div>
 
     <div id="github-stats" class="section">
-      <v-row align="center" justify="center" class="my-12">
-        <v-col cols="12" md="8" class="text-center">
+      <v-row class="my-12">
+        <v-col cols="12">
           <GitHubStats />
         </v-col>
       </v-row>
     </div>
 
     <div id="contact" class="section">
-      <v-row align="center" justify="center" class="my-10">
-        <v-col cols="12" md="8" class="text-center">
+      <v-row class="my-10">
+        <v-col cols="12">
           <ContactMe />
         </v-col>
       </v-row>
@@ -134,9 +134,9 @@ export default {
   margin-bottom: 3rem;
 }
 .section {
-  padding: 20px;
   margin: 0;
   width: 100%;
   box-sizing: border-box;
+  padding:0;
 }
 </style>
