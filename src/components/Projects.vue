@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import ProjectLinkButton from './ProjectLinkButton.vue';
-import placeholderImage from '../assets/davis.png';
 
 const projects = [
   {
@@ -180,119 +179,109 @@ const projects = [
     <h2 class="display-2 font-weight-bold">
       My <span style="font-weight: 900;">Projects</span>
     </h2>
-    <div class="scrollable-projects">
-      <v-row justify="center">
-        <v-col cols="12" md="10">
-          <v-card
-              v-for="(project, index) in projects"
-              :key="index"
-              class="project-card my-5"
-              outlined
-          >
-            <v-row class="align-start">
-              <v-col cols="2" class="text-left">
-                <Icon :icon="project.icon" class="project-icon" />
-              </v-col>
-              <v-col cols="10" class="text-left">
-                <div class="d-flex justify-space-between align-start">
-                  <div class="project-details">
-                    <h3 class="project-title">
-                      {{ project.title }}
-                    </h3>
-                    <div class="project-links">
-                      <ProjectLinkButton
-                          v-for="(link, linkIndex) in project.links"
-                          :key="linkIndex"
-                          :icon="link.icon"
-                          :text="link.name"
-                          :href="link.href"
-                          :color="link.color"
-                          class="link-button"
-                      />
-                    </div>
-                  </div>
-                  <div class="project-year">
-                    {{ project.year }}
-                  </div>
-                </div>
-                <div class="project-description mt-3">
-                  <p>{{ project.description }}</p>
-                </div>
-                <div class="project-tags mt-2">
-                  <div
-                      v-for="(tag, tagIndex) in project.tags"
-                      :key="tagIndex"
-                      class="tag"
-                      :style="{ backgroundColor: tag.color }"
-                  >
-                    <Icon :icon="tag.icon" class="tag-icon" />
-                    <span class="tag-text">{{ tag.name }}</span>
-                  </div>
-                </div>
-              </v-col>
-            </v-row>
-          </v-card>
-        </v-col>
-      </v-row>
-    </div>
+    <v-row>
+      <v-col
+          cols="12"
+          md="6"
+          v-for="(project, index) in projects"
+          :key="index"
+      >
+        <v-card class="education-card my-10">
+          <v-row class="align-start">
+            <v-col cols="12" class="text-center">
+              <Icon :icon="project.icon" class="education-logo" />
+            </v-col>
+            <v-col cols="12" class="text-left">
+              <div class="education-school-name">
+                {{ project.title }}
+                <span
+                    v-for="(link, linkIndex) in project.links"
+                    :key="linkIndex"
+                >
+                  <ProjectLinkButton
+                      :icon="link.icon"
+                      :text="link.name"
+                      :href="link.href"
+                      :color="link.color"
+                      class="link-button"
+                  />
+                </span>
+              </div>
+              <div class="education-major-title">{{ project.description }}</div>
+              <div class="education-date">{{ project.year }}</div>
+              <div class="d-flex align-center mt-2">
+                <span
+                    v-for="(tag, tagIndex) in project.tags"
+                    :key="tagIndex"
+                    class="tag"
+                    :style="{ backgroundColor: tag.color }"
+                >
+                  <Icon :icon="tag.icon" class="tag-icon" />
+                  <span class="tag-text">{{ tag.name }}</span>
+                </span>
+              </div>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <style scoped>
-.display-2 {
-  color: #333;
-}
-.font-weight-bold {
-  font-weight: 700;
-}
-.project-card {
-  padding: 24px;
-  background-color: #fff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+.education-card {
+  position: relative;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: none;
+  box-shadow: none;
   border-radius: 12px;
   text-align: left;
 }
-.project-icon {
-  font-size: 2rem;
+.education-logo {
+  font-size: 4rem;
   color: #1976d2;
 }
-.project-details {
-  flex: 1;
-  min-width: 0;
-}
-.project-title {
-  font-weight: 500;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-.project-links {
-  display: flex;
-  gap: 0.5rem;
-}
-.project-year {
-  font-size: 0.9rem;
-  color: #757575;
+.education-school-name,
+.education-major-title,
+.education-date {
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
-.project-description {
-  font-size: 0.9rem;
-  color: #424242;
-}
-.project-tags {
+.education-school-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  max-width: 100%;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.25rem;
+}
+.education-major-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+.education-date {
+  font-size: 14px;
+  color: #757575;
+  max-width: 100%;
 }
 .tag {
   display: flex;
   align-items: center;
   padding: 0.2rem 0.5rem;
   border-radius: 12px;
+  margin-left: 8px;
 }
 .tag-icon {
   width: 16px;
   height: 16px;
   margin-right: 0.3rem;
+  color: #fff;
 }
 .tag-text {
   font-size: 0.75rem;
@@ -306,24 +295,12 @@ const projects = [
   align-items: center;
   gap: 0.3rem;
   font-size: 0.75rem;
+  margin-left: 8px;
 }
-.scrollable-projects {
-  max-height: 420px;
-  overflow-y: auto;
-  overflow-x: hidden;
+.display-2 {
+  color: #333;
 }
-.scrollable-projects::-webkit-scrollbar {
-  width: 8px;
-}
-.scrollable-projects::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-.scrollable-projects::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-.scrollable-projects::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+.font-weight-bold {
+  font-weight: 700;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div style="width:100%;margin:0;padding:0;">
-    <div id="about" class="section">
+    <div id="about" class="section" v-show-on-scroll>
       <v-row class="my-10">
         <v-col cols="12">
           <Landing />
@@ -11,7 +11,7 @@
       </v-row>
     </div>
 
-    <div id="landing-section" class="section">
+    <div id="landing-section" class="section" v-show-on-scroll>
       <v-row class="my-10">
         <v-col cols="12">
           <AboutMe />
@@ -22,7 +22,7 @@
       </v-row>
     </div>
 
-    <div id="skills-section" class="section">
+    <div id="skills-section" class="section" v-show-on-scroll>
       <v-row class="my-10">
         <v-col cols="12">
           <CodingSkills />
@@ -30,7 +30,7 @@
       </v-row>
     </div>
 
-    <div id="spacer-section" class="section">
+    <div id="spacer-section" class="section" v-show-on-scroll>
       <v-row>
         <v-col cols="12">
           <v-spacer class="custom-spacer"></v-spacer>
@@ -38,7 +38,7 @@
       </v-row>
     </div>
 
-    <div id="tools" class="section">
+    <div id="tools" class="section" v-show-on-scroll>
       <v-row class="my-10">
         <v-col cols="12">
           <CodingTools />
@@ -46,7 +46,7 @@
       </v-row>
     </div>
 
-    <div id="education" class="section">
+    <div id="education" class="section" v-show-on-scroll>
       <v-row class="my-12">
         <v-col cols="12">
           <Education />
@@ -54,7 +54,7 @@
       </v-row>
     </div>
 
-    <div id="experience" class="section">
+    <div id="experience" class="section" v-show-on-scroll>
       <v-row class="my-12">
         <v-col cols="12">
           <WorkExperience />
@@ -62,7 +62,7 @@
       </v-row>
     </div>
 
-    <div id="projects" class="section">
+    <div id="projects" class="section" v-show-on-scroll>
       <v-row class="my-12">
         <v-col cols="12">
           <Projects />
@@ -70,7 +70,7 @@
       </v-row>
     </div>
 
-    <div id="github-stats" class="section">
+    <div id="github-stats" class="section" v-show-on-scroll>
       <v-row class="my-12">
         <v-col cols="12">
           <GitHubStats />
@@ -78,7 +78,7 @@
       </v-row>
     </div>
 
-    <div id="contact" class="section">
+    <div id="contact" class="section" v-show-on-scroll>
       <v-row class="my-10">
         <v-col cols="12">
           <ContactMe />
@@ -122,6 +122,23 @@ export default {
     ProfilePic,
     LandingPic,
   },
+  directives: {
+    showOnScroll: {
+      mounted(el) {
+        el.style.opacity = '0';
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              el.style.transition = 'opacity 1s ease-in-out';
+              el.style.opacity = '1';
+              observer.unobserve(el);
+            }
+          });
+        });
+        observer.observe(el);
+      }
+    }
+  }
 };
 </script>
 
