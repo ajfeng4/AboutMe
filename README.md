@@ -1,5 +1,7 @@
 # About Me 
 
+My personal portfolio for my personal use, built with Vue.js, Vuetify, SCSS 
+
 ## Project setup
 ```
 npm install
