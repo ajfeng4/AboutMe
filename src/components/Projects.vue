@@ -231,7 +231,7 @@ const projects = [
                 v-for="(image, imgIndex) in project.images"
                 :key="imgIndex"
             >
-              <v-img :src="image" class="project-image" cover></v-img>
+              <v-img :src="image" class="project-image" contain></v-img>
             </v-carousel-item>
           </v-carousel>
           <div class="project-content">
@@ -303,6 +303,9 @@ const projects = [
 }
 .project-image {
   border-radius: 0;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 300px;
 }
 .project-content {
   margin-top: 20px;
