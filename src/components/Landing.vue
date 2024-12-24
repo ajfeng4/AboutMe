@@ -1,8 +1,10 @@
 <template>
-  <v-card flat>
-    <h1 class="display-2 font-weight-bold mb-3">Hello, I'm Alex Feng</h1>
-    <h2 class="headline font-weight-bold">{{ displayedText }}</h2>
-    <SocialMedia />
+  <v-card flat class="landing-container">
+    <h1 class="name">// Alex Feng //</h1>
+    <h2 class="headline">{{ displayedText }}</h2>
+    <div class="social-media-container">
+      <SocialMedia />
+    </div>
   </v-card>
 </template>
 
@@ -16,12 +18,13 @@ export default {
   },
   data() {
     return {
-      texts: ['Computer Science Student', 'Software Engineer', 'Diretor of Procurement', 'Web Developer Assistant','Teaching Assistant','Research Assistant'],
+      texts: ['Software Engineer', 'Research Assistant', 'Teaching Assistant', 'Web Developer', 'Procurement Director'],
       displayedText: '',
       textIndex: 0,
       charIndex: 0,
       isDeleting: false,
-      typingSpeed: 100,
+      typingSpeed: 120,
+      pauseDuration: 500,
     };
   },
   mounted() {
@@ -36,24 +39,57 @@ export default {
         this.displayedText = currentText.substring(0, this.charIndex++);
       }
 
-      if (!this.isDeleting && this.charIndex > currentText.length) {
+      if (!this.isDeleting && this.charIndex === currentText.length) {
         this.isDeleting = true;
-        this.typingSpeed = 100;
-      } else if (this.isDeleting && this.charIndex < 0) {
+        setTimeout(this.typeWriter, this.pauseDuration);
+        return;
+      } else if (this.isDeleting && this.charIndex === 0) {
         this.isDeleting = false;
         this.textIndex = (this.textIndex + 1) % this.texts.length;
-        this.charIndex = 0;
-        this.typingSpeed = 100;
       }
 
-      setTimeout(this.typeWriter, this.typingSpeed);
+      setTimeout(this.typeWriter, this.isDeleting ? this.typingSpeed / 2 : this.typingSpeed);
     },
   },
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Saira', sans-serif;
+  text-align: center;
+}
+
+.name {
+  font-size: 6.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: #000;
+}
+
 .headline {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0.5rem 0;
+  color: #000;
   min-height: 2.5em;
+}
+
+.social-media-container {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 8px;
+  width: fit-content;
 }
 </style>
