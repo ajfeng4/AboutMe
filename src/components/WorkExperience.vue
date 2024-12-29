@@ -3,16 +3,19 @@
     <h2 class="display-2 font-weight-bold">
       My <span style="font-weight: 900;">Experience</span>
     </h2>
-    <div class="timeline-wrapper">
-      <div
+    <v-timeline>
+      <v-timeline-item
           v-for="(experience, index) in experiences"
           :key="index"
-          :class="['timeline-item', index % 2 === 0 ? 'left' : 'right']"
+          :color="index % 2 === 0 ? 'primary' : 'secondary'"
+          :right="index % 2 !== 0"
+          :left="index % 2 === 0"
       >
-        <div class="timeline-badge">
+        <template #icon>
           <v-img :src="experience.image" class="timeline-logo"></v-img>
-        </div>
+        </template>
         <v-card class="education-card">
+          <v-img :src="experience.image" class="education-card-image" cover></v-img>
           <v-row class="align-start px-4 pt-4">
             <v-col cols="12">
               <div class="education-school-name">{{ experience.title }}</div>
@@ -22,8 +25,8 @@
             </v-col>
           </v-row>
         </v-card>
-      </div>
-    </div>
+      </v-timeline-item>
+    </v-timeline>
   </v-container>
 </template>
 
@@ -144,26 +147,28 @@ export default {
 .education-card {
   position: relative;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   text-align: center;
   margin-top: 40px;
 }
+.education-card-image {
+  height: 150px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
 .education-school-name {
   font-size: 20px;
   font-weight: 700;
-  max-width: 100%;
 }
 .education-major-title {
   font-size: 16px;
   font-weight: 500;
-  max-width: 100%;
 }
 .education-location,
 .education-date {
   font-size: 14px;
   color: #757575;
-  max-width: 100%;
 }
 @media (max-width: 960px) {
   .timeline-item {
